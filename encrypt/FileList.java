@@ -1,4 +1,7 @@
 //Java class that gets all of user's txt files.
+
+/* THIS IS HEAVILY COMMENTED SO YOU CAN UNDERSTAND AND HOPEFULLY DEBUG KEVIN */
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;

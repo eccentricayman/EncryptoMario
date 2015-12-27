@@ -1,4 +1,7 @@
 //Java class that encrypts a single file, with utilities.
+
+/* THIS IS HEAVILY COMMENTED SO YOU CAN UNDERSTAND AND HOPEFULLY DEBUG KEVIN */
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -9,11 +12,13 @@ public class FileEncrypter {
 	//the file to encrypt
 	private File toEncrypt;
 	//the encryption key
-	private String key;
+	private SecretKey key;
 	//the lines in the file, to be encrypted later
 	private ArrayList<String> lines;
 	//used to tell if a line is encrypted or not
 	private ArrayList<Boolean> isencrypted;
+	//new arraylist for encrypted/not encrypted data, since everything is now in bytes
+	private ArrayList<byte[]> newlines;
 
 	//used to make a random file containing encryption method
 	static final String abc = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -42,22 +47,27 @@ public class FileEncrypter {
 			}
 			file.close();
 		}
-		//basic bufferedreader exceptions
+		//basic bufferedreader exceptions, used stacktrace 
+		//instead of regular printing for easier debugging
 		catch (FileNotFoundException e) {
-			System.out.println(e);
+			e.printStackTrace();
 		}
 		catch (IOException e) {
-			System.out.println(e);
+			e.printStackTrace();
 		}
 		//closes file
 		return total;
 	}
 
-	public FileEncrypter(File _toEncrypt) {
+	public FileEncrypter(File _toEncrypt) throws Exception {
 		//fileencrypter object has file
 		toEncrypt = _toEncrypt;
-		//random key with length
-		key = randomString((int)(Math.random() * 15 + 5));
+		//random AES key, per file
+		KeyGenerator keymaker = KeyGenerator.getInstance("AES");
+		//simple txt files, so 128 instead of 256
+		keymaker.init(128);
+		//stores key for file per object
+		key = keymaker.generateKey();
 		try {
 			BufferedReader file = new BufferedReader(new FileReader(toEncrypt));
 			for (int i = 0 ; i < totallinum(toEncrypt) ; i++) {
@@ -67,20 +77,54 @@ public class FileEncrypter {
 		}
 		//basic bufferdreader exceptions
 		catch (FileNotFoundException e) {
-			System.out.println(e);
+			e.printStackTrace();
 		}
 		catch (IOException e) {
-			System.out.println(e);
-		}
-		for (int fill = 0 ; fill < lines.size() ; fill++) {
-			isencrypted.add(false);
+			e.printStackTrace();
 		}
 	}
 
-	public void encrypt() {
+	/* The idea behind this is that it has a 50% chance to encrypt each 
+	line, so even if the user got the key it would definetely be a hassle 
+	because they don't know which lines to decrypt. */
+	public void encrypt() throws Exception {
+		//cipher is initiated here instead of in constructor
+		Cipher AesCipher = Cipher.getInstance("AES");
+		byte[] regularbytetext;
+		byte[] encryptedbytetext;
 		for (int i = 0 ; i < lines.size() ; i++) {
-
+			//regular text in bytes
+			regularbytetext = lines.get(i).getBytes();
+			//key only changes with a new file, because new object
+			AesCipher.init(Cipher.ENCRYPT_MODE, key);
+			//encrypt time!
+			encryptedbytetext = AesCipher.doFinal(regularbytetext);
+			//for 1/2 chance of encrypting the line
+			double random = Math.random();
+			if (random > 0.5) {
+				newlines.add(encryptedbytetext);
+				isencrypted.add(true);
+			}
+			else {
+				//add regular byte text if random is less than 0.5
+				newlines.add(regularbytetext);
+				isencrypted.add(false);
+			}
 		}
+		//new filewriter that overwrites instead of appends on this object's file
+		FileOutputStream overwrite = new FileOutputStream(toEncrypt, false);
+		//using bufferedoutputstream so we can have newlines without using "\n" so 
+		//the encryption doesn't get messed up, and so we can append byte arrays to
+		//txt files
+		BufferedOutputStream out = new BufferedOutputStream(overwrite);
+		//bufferedwriter only so we can append newlines, not sure if this works
+		/*INCOMPLETE
+		BufferedWriter
+		for (int w = 0 ; w < newlines.size() ; w++) {
+			out.write(newlines.get(w));
+			out.newLine();
+		}
+		*/
 	}	
 
 	public void deencrypt() {
