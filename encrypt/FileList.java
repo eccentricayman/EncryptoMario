@@ -1,5 +1,4 @@
-package com.eccentricayman.encrypt;
-
+//Java class that gets all of user's txt files.
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;

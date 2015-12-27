@@ -1,5 +1,4 @@
-package com.eccentricayman.encrypt;
-
+//Java class that encrypts a single file, with utilities.
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -13,6 +12,8 @@ public class FileEncrypter {
 	private String key;
 	//the lines in the file, to be encrypted later
 	private ArrayList<String> lines;
+	//used to tell if a line is encrypted or not
+	private ArrayList<Boolean> isencrypted;
 
 	//used to make a random file containing encryption method
 	static final String abc = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -71,10 +72,15 @@ public class FileEncrypter {
 		catch (IOException e) {
 			System.out.println(e);
 		}
+		for (int fill = 0 ; fill < lines.size() ; fill++) {
+			isencrypted.add(false);
+		}
 	}
 
 	public void encrypt() {
-		//gonna do dis with aes
+		for (int i = 0 ; i < lines.size() ; i++) {
+
+		}
 	}	
 
 	public void deencrypt() {
