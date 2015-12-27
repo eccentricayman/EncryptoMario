@@ -1,7 +1,7 @@
 # EncryptoMario
 A 2d java based version of Mario where instead of losing lives you lose your files!
 
-#ToDo
+##__ToDo__
 List the person's username and their job to complete.
 
 #eccentricayman#
