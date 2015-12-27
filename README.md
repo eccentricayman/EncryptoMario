@@ -10,4 +10,4 @@ List the person's username and their job to complete.
 
 #khwang2337#
 - watch gui videos
-- fix if
+- make sure encryption works when completed
