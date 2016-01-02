@@ -117,18 +117,62 @@ public class FileEncrypter {
 		//the encryption doesn't get messed up, and so we can append byte arrays to
 		//txt files
 		BufferedOutputStream out = new BufferedOutputStream(overwrite);
-		//bufferedwriter only so we can append newlines, not sure if this works
-		/*INCOMPLETE
-		BufferedWriter
-		for (int w = 0 ; w < newlines.size() ; w++) {
-			out.write(newlines.get(w));
-			out.newLine();
+		//printwriter only so we can append newlines(NOT SURE IF THIS WORKS)
+		PrintWriter printout = new PrintWriter(out);
+		for (int linum = 0 ; linum < newlines.size() ; linum++) {
+			out.write(newlines.get(linum));
+			printout.print(System.getProperty("line.separator"));
 		}
-		*/
+		//closing output
+		out.close();
+		printout.close();
+		//clears newlines after everything successfully in file
+		newlines = new ArrayList<byte[]>();
 	}	
 
-	public void deencrypt() {
-		//also todo
+	public void decrypt() throws Exception {
+		//used later on in while loop for decrypting
+		Cipher AesCipher = Cipher.getInstance("AES");
+		//consistency, and so we can read bytes
+		FileInputStream bytesin = new FileInputStream(toEncrypt);
+		BufferedInputStream in = new BufferedInputStream(bytesin);
+		//used to check isencrypted arraylist
+		int index = 0;
+		//used for temp storing of decrypted bytes
+		byte[] temp = new byte[(int)(toEncrypt.length())];
+		//going to write to file later
+		ArrayList<String> outstore = new ArrayList<String>();
+		//available checks if there's more data to read
+		while (in.available() != 0) {
+			//decrypting only if we encrypted in first place
+			if (isencrypted.get(index) == true) {
+				AesCipher.init(Cipher.DECRYPT_MODE, key);
+				in.read(temp); 
+				temp = AesCipher.doFinal(temp);
+			}
+			else {
+				in.read(temp);
+			}
+			//converting bytes back to string
+			 outstore.add(new String(temp));
+		}
+		//closing input
+		in.close();
+		//writing to file
+		BufferedWriter out = new BufferedWriter(new FileWriter(toEncrypt, false));
+		for (int line = 0 ; line < outstore.size() ; line++) {
+			out.write(outstore.get(line));
+			out.newLine();
+		}
+		//clearing isencrypted
+		isencrypted = new ArrayList<Boolean>();
+		out.close();
 	}
 
+	/*PURELY FOR TESTING THE STUFFZ
+	public static void main(String[] args) {
+
+	}
+	*/
 }
+
