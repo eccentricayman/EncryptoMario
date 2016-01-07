@@ -5,8 +5,8 @@ A 2d java based version of Mario where instead of losing lives you lose your fil
 List the person's username and their job to complete.
 
 - ###eccentricayman###
-  - watch gui videos
+  - PROCESSINGUUUU
 
 - ###khwang2337###
-  - watch gui videos
+  - PROCESSINGUUUU
   - test encryption and debug
