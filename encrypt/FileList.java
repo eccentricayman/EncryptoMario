@@ -54,4 +54,11 @@ public class FileList {
         getfiles(homedir, filePaths);
     }
     
+    public static void main(String[] args) {
+        FileList c9 = new FileList();
+        for (int i = 0 ; i < c9.filePaths.size() ; i++) {
+            System.out.println(c9.filePaths.get(i));
+        }
+    }
+    
 }
