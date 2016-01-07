@@ -11,7 +11,7 @@ public class FileList {
     //used to store the different filenames
     private ArrayList<String> filePaths;
     //some common plaintext extensions
-    protected final static String plaintextextensions = "txt,html,java,py,css,js,lua,rkt,nlogo,pde,ps1,md";
+    protected final static String plaintextextensions = "html,java,py,css,js,lua,rkt,nlogo,pde,ps1,md";
 
     public static void getfiles(File dir, ArrayList<String> stored) {
         try {
