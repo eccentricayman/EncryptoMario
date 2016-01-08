@@ -18,7 +18,7 @@ public class FileList {
             File[] files = dir.listFiles();
             for (File file : files) {
                 if (file.isDirectory()) {
-                    if(file.getPath().indexOf(".") == -1) {
+                    if(file.getPath().substring(file.getPath().lastIndexOf("/") + 1).indexOf(".") == -1) {
                         //recursive, if file is a directory run the method on that directory
                         getfiles(file, stored);
                     }
