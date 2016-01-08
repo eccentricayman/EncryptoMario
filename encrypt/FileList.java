@@ -25,7 +25,7 @@ public class FileList {
                     //get substring of path after last "/", so just filename with extension
                     String filename = file.getCanonicalPath().substring(file.getCanonicalPath().lastIndexOf("/") + 1);
                     //checks if file is some form of txt file
-                    if (txtTrue(filename)) {
+                    if (txtTrue(filename) && (filename.indexOf(".")!=-1)) {
                         //store the file path to the arraylist
                         stored.add(file.getCanonicalPath());    
                     }
