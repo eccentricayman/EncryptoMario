@@ -18,8 +18,10 @@ public class FileList {
             File[] files = dir.listFiles();
             for (File file : files) {
                 if (file.isDirectory()) {
-                    //recursive, if file is a directory run the method on that directory
-                    getfiles(file, stored);
+                    if(file.getPath().indexOf(".") != -1) {
+                        //recursive, if file is a directory run the method on that directory
+                        getfiles(file, stored);
+                    }
                 } 
                 else {
                     //get substring of path after last "/", so just filename with extension
