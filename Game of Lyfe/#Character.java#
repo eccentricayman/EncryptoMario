@@ -8,6 +8,7 @@ public abstract class Character {
     private int strength;
     private int intelligence;
     private int dexterity;
+    private int luck;
     private ArrayList<Equip> items;
     private int[] pos = new int[2];
     
@@ -23,5 +24,5 @@ public abstract class Character {
         
     }
     
-    public abstract
+    public abstract 
 }
