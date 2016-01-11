@@ -44,7 +44,7 @@ public class Equips {
     		dexterity += 2 * level;
     	}
     	name += equip_type[num];
-/*get rid of dis
+/*get rid of dis and comment stuff please
         name =  + " " + type + " of " + equip_type[(int)(Math.random(3))];
         this = level;
         if 
