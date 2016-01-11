@@ -1,5 +1,5 @@
-# EncryptoMario
-A 2d java based version of Mario where instead of losing lives you lose your files!
+# Team Encryptuuu
+A terminal based version of Mario Party!
 
 ##ToDo##
 List the person's username and their job to complete.
