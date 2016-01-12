@@ -24,14 +24,12 @@ public abstract class Character {
         this.name = name;
     }
     
-<<<<<<< HEAD
     public String getName() {
         return name;
     }
     
     public abstract move() {
         
-=======
     public abstract void move();
     
     public abstract void showStats();
@@ -45,7 +43,6 @@ public abstract class Character {
 	else {
 	    coins = 0;
 	}
->>>>>>> d37009b4cdcbd13138170045d6da7518eb494975
     }
     
     public void addKeys(int toadd) {
