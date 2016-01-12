@@ -24,6 +24,12 @@ public abstract class Character {
         this.name = name;
     }
     
+    public String getName() {
+        return name;
+    }
+    
+    public abstract move() {
+        
     public abstract void move();
     
     public abstract void showStats();
