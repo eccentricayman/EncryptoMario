@@ -12,7 +12,7 @@ public abstract class Character {
     private int[] pos = new int[2];
     
     public Character(String name) {
-        this = name;
+        this.name = name;
     }
     
     public abstract move() {

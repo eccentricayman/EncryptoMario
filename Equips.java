@@ -14,8 +14,10 @@ public class Equips {
     private int intelligence = 0;
     private int dexterity = 0;
     private int luck = 0;
+    private int level;
 
     public Equip(int level) {
+        this.level = level;
     	type = typeList[(int)(Math.random(4))]
     	Int num = (int)(Math.random(3))
     	addStat(num,level);
