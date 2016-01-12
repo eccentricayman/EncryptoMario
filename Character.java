@@ -15,6 +15,10 @@ public abstract class Character {
         this.name = name;
     }
     
+    public String getName() {
+        return name;
+    }
+    
     public abstract move() {
         
     }
