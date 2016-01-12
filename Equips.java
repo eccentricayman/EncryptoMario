@@ -18,8 +18,8 @@ public class Equips {
 
     public Equip(int level) {
         this.level = level;
-    	type = typeList[(int)(Math.random(4))]
-    	Int num = (int)(Math.random(3))
+    	type = typeList[(int)(Math.random(4))];
+    	int num = (int)(Math.random(3));
     	addStat(num,level);
     	name = equip_desc[num] + " " + type + " of ";
     	num = (int)(Math.random(3));
