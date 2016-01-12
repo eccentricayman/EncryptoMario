@@ -28,7 +28,7 @@ public abstract class Character {
         return name;
     }
     
-    public abstract move() {
+    public abstract move();
         
     public abstract void move();
     
