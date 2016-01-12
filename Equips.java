@@ -18,37 +18,24 @@ public class Equips {
     public Equip(int level) {
     	type = typeList[(int)(Math.random(4))]
     	Int num = (int)(Math.random(3))
-    	
-    	if (num == 0) {
+    	addStat(num,level);
+    	name = equip_desc[num] + " " + type + " of ";
+    	num = (int)(Math.random(3));
+    	addStat(num,level);
+    	name += equip_type[num];
+    }
+    
+    public void addStat(int input, int level) {
+        if (input == 0) {
     		strength += 2*level;
     	}
-    	if (num == 1) {
+    	if (input == 1) {
     		intelligence += 2 * level;
     	}
-    	if (num == 2) { 
+    	if (input == 2) { 
     		luck += 2 * level;
     	}
     	else dexterity += 2 * level;
-    	name = equip_desc[num] + " " + type + " of ";
-    	num = (int)(Math.random(3));
-    	if (num == 0) {
-    		strength += 2 * level;
-    	}
-    	if (num == 1) {
-    		intelligence += 2 * level;
-    	}
-    	if (num == 2) {
-			luck += 2 * level;
-    	}
-    	else  {
-    		dexterity += 2 * level;
-    	}
-    	name += equip_type[num];
-/*get rid of dis
-        name =  + " " + type + " of " + equip_type[(int)(Math.random(3))];
-        this = level;
-        if 
-        */
     }
    
 }
