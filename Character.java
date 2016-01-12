@@ -31,29 +31,29 @@ public abstract class Character {
     public abstract void equip();
 
     public void addCoins(int toadd) {
-	if (coins + toadd > 0) {
-	    coins += toadd;
-	}
-	else {
-	    coins = 0;
-	}
+        if (coins + toadd > 0) {
+            coins += toadd;
+        }
+        else {
+            coins = 0;
+        }
     }
     
     public void addKeys(int toadd) {
-	if (keys + toadd > 0) {
-	    keys += toadd;
-	}
-	else {
-	    keys = 0;
-	}
+        if (keys + toadd > 0) {
+            keys += toadd;
+        }
+        else {
+            keys = 0;
+        }
     }
     
     public void addStars(int toadd) {
-	if (stars + toadd > 0) {
-	    stars += toadd;
-	}
-	else {
-	    stars = 0;
-	}
+        if (stars + toadd > 0) {
+            stars += toadd;
+        }
+        else {
+            stars = 0;
+        }
     }
 }

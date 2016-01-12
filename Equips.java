@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Equips {
     
     public static final String[] equip_desc = {"Savage", "Smart","Forntunate","Fast"}
-    public static final String[] equip_type = {"Power", "Intelligence", "Luck", "Speed"};
+        public static final String[] equip_type = {"Power", "Intelligence", "Luck", "Speed"};
     public static final String[] typeList = {"Helm", "Armor", "Boots", "Amulet", "Ring"};
     private int[] effects = new int[4];
     private String name;
