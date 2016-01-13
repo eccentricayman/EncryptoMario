@@ -18,7 +18,11 @@ public abstract class Character {
     private int stars;
 
     //character positions
-    private int[] pos = new int[2];
+    private int x = 0;
+    private int y = 0;
+    
+    //roll
+    private int roll = -1;
     
     public Character(String name) {
         this.name = name;
@@ -28,7 +32,41 @@ public abstract class Character {
         return name;
     }
     
-    public abstract move();
+    public int getStrength() {
+        return strength;
+    }
+    
+    public int getIntelligence() {
+        return intelligence;
+    }
+    
+    public int getDexterity() {
+        return dexterity
+    }
+    
+    public int getLuck() {
+        return luck;
+    }
+    
+    public int getCoins() {
+        return coins;
+    }
+    
+    public int getKeys() {
+        return keys;
+    }
+    
+    public int getStars() {
+        return stars;
+    }
+    
+    public int getX() {
+        return x;
+    }
+    
+    public int getY() {
+        return y;
+    }
         
     public abstract void move();
     
