@@ -18,7 +18,11 @@ public abstract class Character {
     private int stars;
 
     //character positions
-    private int[] pos = new int[2];
+    private int x = 0;
+    private int y = 0;
+    
+    //roll
+    private int roll = -1;
     
     public Character(String name) {
         this.name = name;
@@ -28,13 +32,42 @@ public abstract class Character {
         return name;
     }
     
-    public abstract move();
+    public int getStrength() {
+        return strength;
+    }
+    
+    public int getIntelligence() {
+        return intelligence;
+    }
+    
+    public int getDexterity() {
+        return dexterity
+    }
+    
+    public int getLuck() {
+        return luck;
+    }
+    
+    public int getCoins() {
+        return coins;
+    }
+    
+    public int getKeys() {
+        return keys;
+    }
+    
+    public int getStars() {
+        return stars;
+    }
+    
+    public int getX() {
+        return x;
+    }
+    
+    public int getY() {
+        return y;
+    }
         
-    public abstract void move();
-    
-    public abstract void showStats();
-    
-    public abstract void equip();
 
     public void addCoins(int toadd) {
         if (coins + toadd > 0) {
@@ -62,4 +95,23 @@ public abstract class Character {
             stars = 0;
         }
     }
+    
+    public void roll() {
+    	
+    }
+    
+    public void c2K() {
+    	if(coins >= 10) {
+    		coins-=10;
+    		keys+=1;
+    	}
+    	else System.out.println("Not even coins fam.");
+    }
+    
+    public abstract void move();
+    
+    public abstract void showStats();
+    
+    public abstract void equip();
+    
 }
