@@ -8,11 +8,11 @@ public class Position {
     
     
     public void clearCharacters() {
-        characters= "";
+        characters = "";
     }
     
     public void addCharacters(Character Ddaot) {
-        characters+= Ddaot.getName() + " ";
+        characters += Ddaot.getName() + " ";
     }
     
     
