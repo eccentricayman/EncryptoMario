@@ -100,6 +100,14 @@ public abstract class Character {
     	
     }
     
+    public void c2K() {
+    	if(coins >= 10) {
+    		coins-=10;
+    		keys+=1;
+    	}
+    	else System.out.println("Not even coins fam.");
+    }
+    
     public abstract void move();
     
     public abstract void showStats();
