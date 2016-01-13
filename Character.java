@@ -68,11 +68,6 @@ public abstract class Character {
         return y;
     }
         
-    public abstract void move();
-    
-    public abstract void showStats();
-    
-    public abstract void equip();
 
     public void addCoins(int toadd) {
         if (coins + toadd > 0) {
@@ -100,4 +95,15 @@ public abstract class Character {
             stars = 0;
         }
     }
+    
+    public void roll() {
+    	
+    }
+    
+    public abstract void move();
+    
+    public abstract void showStats();
+    
+    public abstract void equip();
+    
 }
