@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Equips {
     
-    public static final String[] equip_desc = {"Savage", "Smart","Forntunate","Fast"}
-        public static final String[] equip_type = {"Power", "Intelligence", "Luck", "Speed"};
+    public static final String[] equip_desc = {"Savage", "Smart","Fortunate","Fast"};
     public static final String[] typeList = {"Helm", "Armor", "Boots", "Amulet", "Ring"};
+	public static final String[] equip_type = {"Power", "Intelligence", "Luck", "Speed"};
     private int[] effects = new int[4];
     private String name;
     private String type;
@@ -39,5 +39,5 @@ public class Equips {
     	}
     	else dexterity += 2 * level;
     }
-   
+	
 }
