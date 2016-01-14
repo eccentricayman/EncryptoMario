@@ -16,7 +16,7 @@ public class Equips {
     private int luck = 0;
     private int level;
 
-    public Equip(int level) {
+    public Equips(int level) {
         this.level = level;
     	type = typeList[(int)(Math.random(4))];
     	int num = (int)(Math.random(3));
@@ -38,7 +38,7 @@ public class Equips {
     		luck += 2 * level;
     	}
     	else dexterity += 2 * level;
-<<<<<<< HEAD:Game of Lyfe/Equips.java
+
     	name = equip_desc[num] + " " + type + " of ";
     	num = (int)(Math.random(3));
     	if (num == 0) {
@@ -54,13 +54,11 @@ public class Equips {
     		dexterity += 2 * level;
     	}
     	name += equip_type[num];
-/*get rid of dis and comment stuff please
-        name =  + " " + type + " of " + equip_type[(int)(Math.random(3))];
-        this = level;
-        if 
+        /*get rid of dis and comment stuff please
+          name =  + " " + type + " of " + equip_type[(int)(Math.random(3))];
+          this = level;
+          if 
         */
-=======
->>>>>>> ddce79a14e27b745e364f7dbfd6b246547c8a23b:Equips.java
     }
 	
 }
