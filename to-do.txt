@@ -1,0 +1,9 @@
+<2016-01-14 Thu>
+
+* TODO
+  + khwang2337   
+    - [ ] Finish character
+    - [ ] Finish equips
+  + eccentricayman
+    - [ ] Finish board
+    - [ ] Finish tutorial
