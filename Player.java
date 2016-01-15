@@ -8,6 +8,9 @@ public Player extends Character {
         for ( ; roll > 0 ; roll--) {
             if (abs(x) + abs(y) == 5) {
                 if (x == 0) {
+                    if (y == 0) {
+                        
+                    }
                     if (y > 0) {
                         x-=1;
                         y-=1; }
@@ -21,8 +24,8 @@ public Player extends Character {
                         y-=1; } } }
             else {
                 if (x == 0) y++;
-                else if (y == 0) x++;
-                else if (y > 0) {
+                if (y == 0) x++;
+                if (y > 0) {
                     if (x > 0) {
                         x--;
                         y++; }

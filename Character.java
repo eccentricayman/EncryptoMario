@@ -28,6 +28,14 @@ public abstract class Character {
         this.name = name;
     }
     
+    public Character(String name, int str, int Int, int dex, int luk) {
+        this.name = name;
+        strength = str;
+        intelligence = Int;
+        dexterity = dex;
+        luck = luk;
+    }
+    
     public String getName() {
         return name;
     }
