@@ -1,4 +1,4 @@
-public Player extends Character {
+public class Player extends Character {
     
     public Player(String name) {
         super(name, 5, 5, 5, 5);
@@ -6,47 +6,58 @@ public Player extends Character {
     
     public void move() {
         for ( ; roll > 0 ; roll--) {
-            if (abs(x) + abs(y) == 5) {
+            if (abs(x) + abs(y) > 5) {
                 if (x == 0) {
-                    if (y == 0) {
-                        
-                    }
                     if (y > 0) {
-                        x-=1;
-                        y-=1; }
+                        x--;
+                        y--;
+                    }
                     else {
-                        System.out.println("Would you like to move Up(0,-4) or Right(1,-4)?"); }
+                        System.out.println("Would you like to move Up(0,-4) or to the Right(-1,-4)?");
+                    }
+                }
                 else if (y == 0) {
-                        if (x > 0) {
-                            System.out.println("Would you like to move Left(4,0) or Up(4,1)?"); }    
-                    else {
-                        x+=1;
-                        y-=1; } } }
-            else {
-                if (x == 0) y++;
-                if (y == 0) x++;
-                if (y > 0) {
                     if (x > 0) {
-                        x--;
-                        y++; }
-                    else {
-                        x--;
-                        y--;
+                        System.out.println("Would you like to move Up(4,1) or to the Left(4,0)?");
                     }
-                }
-                else {
-                    if (x > 0) {
+                    else {
                         x++;
-                        y++;
-                    }
-                    else {
-                        x--;
                         y--;
+                    } 
+                }
+            }
+            else {
+                if (abs(x) + abs(y) <  5) {
+                    if (x == 0) {
+                        if (y == 0) {
+                            System.out.println("Would you like to move Up(0,1) or to the Left(1,0)?");
+                        }
+                    else y++;
+                    }
+                    else if (y == 0) x--;
+                    else if (y > 0) {
+                        if (x > 0) {
+                            x--;
+                            y++;
+                        }
+                        else {
+                            x--;
+                            y--;
+                        }
+                    }
+                    else if (y < 0) {
+                        if (x > 0) {
+                            x++;
+                            y++;
+                        }
+                        else {
+                            x++;
+                            y--;
+                        }
                     }
                 }
             }
-            }
-        }
+                
     }
     
     public void showStats() {
