@@ -1,10 +1,7 @@
-<2016-01-14 Thu>
-
-- Listed in order of importance. Open this file in Emacs
-  and type "M-x org-mode RET".
-- Once in org-mode, use "C-c C-c" to mark a task as complete, and
-  do "S-M RET" to create a new task under the current one.
-- To update the timestamp, hover over it and use "C-c <".
+- Everything is listed in order of importance.
+- Get Syntax Highlighting: "M-x org-mode RET"
+- Mark Task Complete: "C-c C-c"
+- Create new Task: "S-M RET" 
 
 ** TODO [25%]
 
