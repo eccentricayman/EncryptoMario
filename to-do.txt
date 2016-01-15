@@ -1,6 +1,7 @@
 - Everything is listed in order of importance.
+- Use Emacs to make proper use of this todo list.
 - Get Syntax Highlighting: "M-x org-mode RET"
-- Mark Task Complete: "C-c C-c"
+- Mark Task Complete/Mark Task Incomplete: "C-c C-c"
 - Create new Task: "S-M RET" 
 
 ** TODO [25%]
@@ -19,29 +20,15 @@
       * [ ] Finish position
         - Position class manages current position of one player  
 
-    + [ ] Finish Main(The File to run in terminal)
+    + [ ] Finish Main (The File to run in terminal when everything is done)
       - Should contain a player maker, to be passed to the game/tutorial.
       - The player should be made by scanner, tutorial is based whether player is new or not.
 
       * [ ] Finish Game
         - Keeps track of the info and current data for every player
-        - Is the actual game file itself
+        - Is the actual game file itself, with everything but the tutorial.
 
       * [ ] Finish tutorial
-        - Teaches the player how to play through reading
-        - If time permits, teaches through an example game
-      
-   
-
-
-
-
-
-
-   
-
-    
-
-    
-    
-    
+        - Teaches the player how to play through instructions.
+        - If time permits, the tutorial will have an example game.
+        
