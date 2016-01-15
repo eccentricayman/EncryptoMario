@@ -1,3 +1,4 @@
+# Ignore Class Files and Emacs Backups #
 *.class
 *~
 *#
