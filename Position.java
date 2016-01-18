@@ -1,18 +1,30 @@
+/*Position is a class that manages a single position on the map */
+
 public class Position {
     
     private String characters = "";
-    private String eventName;
+    //replaced eventnum with object event, will do instanceof event
+    private Object event;
     private int xcoord, ycoord;
-    private int eventNum;
     
     
     
-    public void clearCharacters() {
-        characters = "";
+    public Position(int x, int y) {
+        xcoord = x;
+        ycoord = y;
+    }
+
+    public Position(int x, int y, Object thisevent) {
+        this(x, y);
+        event = thisevent;
     }
     
-    public void addCharacters(Character Ddaot) {
-        characters += Ddaot.getName() + " ";
+    public void addCharacter(Character toadd) {
+        characters.add(toadd);
+    }
+
+    public void removeCharacter(Character torm) {
+        characters.remove(torm);
     }
     
     

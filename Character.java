@@ -18,8 +18,10 @@ public abstract class Character {
     private int stars;
 
     //character positions
-    private int x = 0;
-    private int y = 0;
+    //private int x = 0;
+    //private int y = 0;
+    //perhaps we should use this instead?
+    private Position currentpos;
     
     //roll
     private int roll = -1;
@@ -113,7 +115,7 @@ public abstract class Character {
     		coins-=10;
     		keys+=1;
     	}
-    	else System.out.println("Not even coins fam.");
+    	else System.out.println("u broke boi, get more coins...");
     }
     
     public abstract void move();

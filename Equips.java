@@ -7,7 +7,7 @@ public class Equips {
     public static final String[] equip_desc = {"Savage", "Smart","Fortunate","Fast"};
     public static final String[] typeList = {"Helm", "Armor", "Boots", "Amulet", "Ring"};
 	public static final String[] equip_type = {"Power", "Intelligence", "Luck", "Speed"};
-    private int[] effects = new int[4];
+    private int[] effects = {0, 0, 0, 0};
     private String name;
     private String type;
     private int strength = 0;
@@ -54,11 +54,11 @@ public class Equips {
     		dexterity += 2 * level;
     	}
     	name += equip_type[num];
-        /*get rid of dis and comment stuff please
-          name =  + " " + type + " of " + equip_type[(int)(Math.random(3))];
-          this = level;
-          if 
-        */
+    }
+
+    public String toString() {
+        String retstr = new String();
+        retstr += this.name;
     }
 	
 }

@@ -57,11 +57,25 @@ public class Player extends Character {
                     }
                 }
             }
-                
+            
+        }
     }
-    
-    public void showStats() {
         
+    //replaced public void showStats() with toString() 
+    public String toString() {
+        String retstr = new String();
+        retstr += name;
+        retstr += "Strength: " + strength;
+        retstr += "Intelligence: " + intelligence;
+        retstr += "Dexterity: " + dexterity;
+        retstr += "Coins: " + coins;
+        retstr += "Keys: " + keys;
+        retstr += "Stars: " + stars;
+        retstr += "Equips:";
+        for (int i = 0 ; i < items.size() ; i++) {
+            retstr += items.get(i).toString();
+        }
+        return retstr;
     }
     
     public void equip() {
