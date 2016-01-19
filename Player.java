@@ -61,25 +61,28 @@ public class Player extends Character {
         }
     }
         
-    //replaced public void showStats() with toString() 
-    public String toString() {
-        String retstr = new String();
-        retstr += name;
-        retstr += "Strength: " + strength;
-        retstr += "Intelligence: " + intelligence;
-        retstr += "Dexterity: " + dexterity;
-        retstr += "Coins: " + coins;
-        retstr += "Keys: " + keys;
-        retstr += "Stars: " + stars;
-        retstr += "Equips:";
-        for (int i = 0 ; i < items.size() ; i++) {
-            retstr += items.get(i).toString();
-        }
-        return retstr;
-    }
     
-    public void equip() {
-        
+    public void equip(Equips eq) {
+        if (eq.getType().equals("Helm")) {
+            if ( Helm == null )  {
+                System.out.println("Would you like to equip "+eq.getName()+"? \nEnter Y or N.");
+            }
+            else {
+                
+            }
+        }
+        if (eq.getType().equals("Armor")) {
+            
+        }
+        if (eq.getType().equals("Boots")) {
+            
+        }
+        if (eq.getType().equals("Amulet")) {
+            
+        }
+        if (eq.getType().equals("Ring")) {
+            
+        }
     }
     
     

@@ -55,10 +55,22 @@ public class Equips {
     	}
     	name += equip_type[num];
     }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public String getType() {
+        return type;
+    }
+    
 
     public String toString() {
-        String retstr = new String();
-        retstr += this.name;
+        String retstr = name + " -- Level " + level + "\n";
+        retstr += "Stats:\n";
+        retstr += "Strength- "+strength+"\n";
+        retstr += 
+        
     }
 	
 }
