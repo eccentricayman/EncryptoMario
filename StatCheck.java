@@ -18,7 +18,7 @@ public class StatCheck {
     }
 
     public void addplayer(Character toadd) {
-        if (players.IndexOf(toadd) == -1) {
+        if (players.indexOf(toadd) == -1) {
             players.add(toadd);
         }
         else {
@@ -27,7 +27,7 @@ public class StatCheck {
     }
     
     public void removeplayer(Character torm) {
-        if (players.IndexOf(torm) != -1) {
+        if (players.indexOf(torm) != -1) {
             players.remove(torm);
         }
         else {
@@ -36,7 +36,20 @@ public class StatCheck {
     }
     
     public boolean statCheck(Character tochk) {
-        
+        if (players.indexOf(tochk) != -1) {
+            if (tochk.getStrength() >= strnreq &&
+                tochk.getIntelligence() >= intlreq &&
+                tochk.getDexterity() >= dextreq) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            System.out.println("Player is not at this position, so false.");
+            return false;
+        }
     }
     
 }

@@ -1,4 +1,4 @@
-/* Basic skeleton class for characters to implement later */
+/* Basic skeleton class for characters to implement */
 
 import java.util.ArrayList;
 
@@ -12,7 +12,11 @@ public abstract class Character {
     private int luck;
 
     //character items
-    private ArrayList<Equip> items;
+    private Equips helm;
+    private Equips armor;
+    private Equips boots;
+    private Equips amulet;
+    private Equips ring;
     private int coins;
     private int keys;
     private int stars;
@@ -51,7 +55,7 @@ public abstract class Character {
     }
     
     public int getDexterity() {
-        return dexterity
+        return dexterity;
     }
     
     public int getLuck() {
@@ -71,13 +75,12 @@ public abstract class Character {
     }
     
     public int getX() {
-        return x;
+        currentpos.getX();
     }
-    
+
     public int getY() {
-        return y;
+        currentpos.getY();
     }
-        
 
     public void addCoins(int toadd) {
         if (coins + toadd > 0) {

@@ -6,29 +6,32 @@
 
   ** TODO [25%]
 
-  + [ ] Finish Character
-    * [ ] Extend with player
-    * [ ] Extend with AI
+  + [X] Finish Character
+  
+  + [ ] Extend with player
+    
+  + [ ] Extend with AI
           
   + [X] Finish equip
-    * [X] Include luck factor
-    * [X] Randomize equip names
+    - [X] Include luck factor
+    - [X] Randomize equip names
 
   + [ ] Finish board
     - Board should manage all player positions, equip positions, chest positions, and star positions.
+    - Board should have a 2D arraylist of positions and is how the character moves.
 
-    - [ ] Finish position
-      - Position class manages current position of one player  
+  + [ ] Finish position
+    - Position class manages current position of one player  
 
   + [ ] Finish Main (The File to run in terminal when everything is done)
     - Should contain a player maker, to be passed to the game/tutorial.
     - The player should be made by scanner, tutorial is based whether player is new or not.
 
-    - [ ] Finish Game
-      - Keeps track of the info and current data for every player
-      - Is the actual game file itself, with everything but the tutorial.
+  + [ ] Finish Game
+    - Keeps track of the info and current data for every player
+    - Is the actual game file itself, with everything but the tutorial.
 
-    - [ ] Finish tutorial
-      - Teaches the player how to play through instructions.
-      - If time permits, the tutorial will have an example game.
+  + [ ] Finish tutorial
+    - Teaches the player how to play through instructions.
+    - If time permits, the tutorial will have an example game.
           

@@ -27,5 +27,12 @@ public class Position {
         characters.remove(torm);
     }
     
+    public getX() {
+        return xcoord;
+    }
+
+    public getY() {
+        return ycoord;
+    }
     
 }
