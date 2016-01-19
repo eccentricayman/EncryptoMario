@@ -68,7 +68,13 @@ public class Player extends Character {
                 Scanner ui = new Scanner();
                 System.out.println("Would you like to equip "+eq.getName()+"? \nEnter Y or N.");
                 String answer = ui.next();
-                if (answer.toLowerCase() == "y") 
+                while (answer.toLowerCase() != "y" && answer.toLowerCase() != "n") {
+                    System.out.println("Please input Y or N.");
+                    answer = ui.next();
+                }
+                if (answer.toLowerCase() == "y") {
+                    Helm
+                }
                 
             }
             else {
