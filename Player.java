@@ -65,7 +65,11 @@ public class Player extends Character {
     public void equip(Equips eq) {
         if (eq.getType().equals("Helm")) {
             if ( Helm == null )  {
+                Scanner ui = new Scanner();
                 System.out.println("Would you like to equip "+eq.getName()+"? \nEnter Y or N.");
+                String answer = ui.next();
+                if (answer.toLowerCase() == "y") 
+                
             }
             else {
                 

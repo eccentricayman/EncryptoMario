@@ -68,9 +68,10 @@ public class Equips {
     public String toString() {
         String retstr = name + " -- Level " + level + "\n";
         retstr += "Stats:\n";
-        retstr += "Strength- "+strength+"\n";
-        retstr += 
-        
+        if (strength != 0) retstr += "Strength- " + strength + "\n";
+        if (intelligence != 0) retstr += "Intelligence- " + intelligence + "\n";
+        if (dexterity != 0) retstr += "Dexterity- " + dexterity + "\n";
+        if (luck != 0) retstr += "Luck- " + luck + "\n";
     }
 	
 }
