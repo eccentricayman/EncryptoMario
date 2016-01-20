@@ -16,6 +16,8 @@ public class Tutorial {
         + "5) Coins Keys and Stars\n"
         + "6) Winning (The Important Chapter)\n";
     private String basics =
-        "The basic commands "
+        "The basic commands are mainly outline by the prompts:
+    
 }
+
 
