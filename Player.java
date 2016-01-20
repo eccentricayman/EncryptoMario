@@ -63,21 +63,28 @@ public class Player extends Character {
         
     
     public void equip(Equips eq) {
+        Scanner ui = new Scanner();
+        String answer;
         if (eq.getType().equals("Helm")) {
             if ( Helm == null )  {
-                Scanner ui = new Scanner();
-                System.out.println("Would you like to equip "+eq.getName()+"? \nEnter Y or N.");
-                String answer = ui.next();
+                System.out.println("Would you like to equip "+eq.getName()+"? \n"+eq+"\nEnter Y or N.");
+                answer = ui.next();
                 while (answer.toLowerCase() != "y" && answer.toLowerCase() != "n") {
                     System.out.println("Please input Y or N.");
                     answer = ui.next();
                 }
-                if (answer.toLowerCase() == "y") {
-                    Helm
+                if (answer.toLowerCase() == "y") Helm = eq;
+                else {
+                    addCoins(eq.level*20);
+                    System.out.println("Equip sold for "+ eq.level*10 + " coins.");
                 }
                 
             }
             else {
+                System.out.println("Equipped Helm: " + Helm);
+                System.out.println("New Helm: " + eq);
+                System.out.println("Would you like to swap Helms? Keep in mind the unused Helm will be sold. Enter Y or N.");
+                
                 
             }
         }

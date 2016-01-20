@@ -63,7 +63,7 @@ public class Equips {
     public String getType() {
         return type;
     }
-    
+        
 
     public String toString() {
         String retstr = name + " -- Level " + level + "\n";
