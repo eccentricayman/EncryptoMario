@@ -10,10 +10,6 @@ public class Equips {
     private int[] effects = {0, 0, 0, 0};
     private String name;
     private String type;
-    private int strength = 0;
-    private int intelligence = 0;
-    private int dexterity = 0;
-    private int luck = 0;
     private int level;
 
     public Equips(int level) {
@@ -29,30 +25,29 @@ public class Equips {
     
     public void addStat(int input, int level) {
         if (input == 0) {
-    		strength += 2*level;
+    		effects[0] += 2*level;
     	}
     	if (input == 1) {
-    		intelligence += 2 * level;
+    		effects[1] += 2 * level;
     	}
     	if (input == 2) { 
-    		luck += 2 * level;
+    		effects[3] += 2 * level;
     	}
-    	else dexterity += 2 * level;
+    	else effects[2] += 2 * level;
 
     	name = equip_desc[num] + " " + type + " of ";
     	num = (int)(Math.random(3));
-    	if (num == 0) {
-    		strength += 2 * level;
+    	if (input == 0) {
+    		effects[0] += 2*level;
     	}
-    	if (num == 1) {
-    		intelligence += 2 * level;
+    	if (input == 1) {
+    		effects[1] += 2 * level;
     	}
-    	if (num == 2) {
-			luck += 2 * level;
+    	if (input == 2) { 
+    		effects[3] += 2 * level;
     	}
-    	else  {
-    		dexterity += 2 * level;
-    	}
+    	else effects[2] += 2 * level;
+    	
     	name += equip_type[num];
     }
     
@@ -63,7 +58,10 @@ public class Equips {
     public String getType() {
         return type;
     }
-        
+    
+    public int[] getEstats() {
+        return effects;
+    }
 
     public String toString() {
         String retstr = name + " -- Level " + level + "\n";
