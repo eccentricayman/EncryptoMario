@@ -80,14 +80,7 @@ public class AI extends Character {
         //helm equipping
         if (eq.getType().equals("Helm")) {
             if (helm == null) {
-                toss = (int)(rand.nextDouble());
-                //randomizes if AI equips or not
-                if (toss == 0) {
-                    helm = eq;
-                }
-                else {
-                    addCoins(eq.getLevel() * 10);
-                }
+                helm = eq;
             }
             else {
                 toss = (int)(rand.nextDouble());
@@ -103,13 +96,7 @@ public class AI extends Character {
         //armor equipping
         if (eq.getType().equals("Armor")) {
             if (armor == null) {
-                toss = (int)(rand.nextDouble());
-                if (toss = 0) {
-                    armor = eq;
-                }
-                else {
-                    addCoins(eq.getLevel() * 10);
-                }
+                armor = eq;
             }
             else {
                 toss = (int)(rand.nextDouble());
@@ -125,13 +112,7 @@ public class AI extends Character {
         //boots equipping
         if (eq.getType().equals("Boots")) {
             if (boots == null) {
-                toss = (int)(rand.nextDouble());
-                if (toss = 0) {
-                    boots = eq;
-                }
-                else {
-                    addCoins(eq.getLevel() * 10);
-                }
+                boots = eq;
             }
             else {
                 toss = (int)(rand.nextDouble());
@@ -147,13 +128,7 @@ public class AI extends Character {
         //amulet equipping
         if (eq.getType().equals("Amulet")) {
             if (amulet == null) {
-                toss = (int)(rand.nextDouble());
-                if (toss = 0) {
-                    amulet = eq;
-                }
-                else {
-                    addCoins(eq.getLevel() * 10);
-                }
+                amulet = eq;
             }
             else {
                 toss = (int)(rand.nextDouble());
@@ -169,13 +144,7 @@ public class AI extends Character {
         //ring equipping
         if (eq.getType().equals("Ring")) {
             if (ring == null) {
-                toss = (int)(rand.nextDouble());
-                if (toss = 0) {
-                    ring = eq;
-                }
-                else {
-                    addCoins(eq.getLevel() * 10);
-                }
+                ring = eq;
             }
             else {
                 toss = (int)(rand.nextDouble());
