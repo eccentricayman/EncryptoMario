@@ -1,4 +1,4 @@
-/*Position is a class that manages a single position on the map */
+/* Position is a class that manages a single position on the map */
 
 public class Position {
     
