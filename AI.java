@@ -86,6 +86,8 @@ public class AI extends Character {
                 toss = (int)(rand.nextDouble());
                 if (toss = 0) {
                     addCoins(helm.getLevel() * 10);
+                    minusStats(helm);
+                    addStats(eq);
                     helm = eq;
                 }
                 else {
@@ -102,6 +104,8 @@ public class AI extends Character {
                 toss = (int)(rand.nextDouble());
                 if (toss = 0) {
                     addCoins(armor.getLevel() * 10);
+                    minusStats(armor);
+                    addStats(eq);
                     armor = eq;
                 }
                 else {
@@ -118,6 +122,8 @@ public class AI extends Character {
                 toss = (int)(rand.nextDouble());
                 if (toss = 0) {
                     addCoins(boots.getLevel() * 10);
+                    minusStats(boots);
+                    addStats(eq);
                     boots = eq;
                 }
                 else {
@@ -134,6 +140,8 @@ public class AI extends Character {
                 toss = (int)(rand.nextDouble());
                 if (toss = 0) {
                     addCoins(amulet.getLevel() * 10);
+                    minusStats(amulet);
+                    addStats(eq);
                     amulet = eq;
                 }
                 else {
@@ -150,6 +158,8 @@ public class AI extends Character {
                 toss = (int)(rand.nextDouble());
                 if (toss = 0) {
                     addCoins(ring.getLevel() * 10);
+                    minusStats(ring);
+                    addStats(eq);
                     ring = eq;
                 }
                 else {
