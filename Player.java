@@ -75,6 +75,7 @@ public class Player extends Character {
                 }
                 if (answer.toLowerCase() == "y") {
                     helm = eq;
+                    addStats(eq);
                     System.out.println(eq.getName() + " has been equipped.");
                 }
                 else {
@@ -95,6 +96,8 @@ public class Player extends Character {
                 if (answer.toLowerCase() == "y") {
                     System.out.println(eq.getName() + " has been equipped and " + helm.getName() + " has been sold for " + helm.getLevel() * 10 + ".");
                     addCoins(helm.getLevel()*10);
+                    minusStats(helm);
+                    addStats(eq);
                     helm = eq;
                 }
                 else {
@@ -115,6 +118,7 @@ public class Player extends Character {
                 }
                 if (answer.toLowerCase() == "y") {
                     armor = eq;
+                    addStats(eq);
                     System.out.println(eq.getName() + " has been equipped.");
                 }
                 else {
@@ -135,6 +139,8 @@ public class Player extends Character {
                 if (answer.toLowerCase() == "y") {
                     System.out.println(eq.getName() + " has been equipped and " + armor.getName() + " has been sold for " + armor.getLevel() * 10 + ".");
                     addCoins(armor.getLevel()*10);
+                    minusStats(armor);
+                    addStats(eq);
                     helm = eq;
                 }
                 else {
@@ -155,6 +161,7 @@ public class Player extends Character {
                 }
                 if (answer.toLowerCase() == "y") {
                     boots = eq;
+                    addStats(eq);
                     System.out.println(eq.getName() + " has been equipped.");
                 }
                 else {
@@ -175,6 +182,8 @@ public class Player extends Character {
                 if (answer.toLowerCase() == "y") {
                     System.out.println(eq.getName() + " has been equipped and " + boots.getName() + " has been sold for " + boots.getLevel() * 10 + ".");
                     addCoins(boots.getLevel()*10);
+                    minusStats(boots);
+                    addStats(eq);
                     boots = eq;
                 }
                 else {
@@ -195,6 +204,7 @@ public class Player extends Character {
                 }
                 if (answer.toLowerCase() == "y") {
                     amulet = eq;
+                    addStats(eq);
                     System.out.println(eq.getName() + " has been equipped.");
                 }
                 else {
@@ -215,6 +225,8 @@ public class Player extends Character {
                 if (answer.toLowerCase() == "y") {
                     System.out.println(eq.getName() + " has been equipped and " + amulet.getName() + " has been sold for " + amulet.getLevel() * 10 + ".");
                     addCoins(amulet.getLevel()*10);
+                    minusStats(amulet);
+                    addStats(eq);
                     amulet = eq;
                 }
                 else {
@@ -235,6 +247,7 @@ public class Player extends Character {
                 }
                 if (answer.toLowerCase() == "y") {
                     ring = eq;
+                    addStats(eq);
                     System.out.println(eq.getName() + " has been equipped.");
                 }
                 else {
@@ -255,6 +268,8 @@ public class Player extends Character {
                 if (answer.toLowerCase() == "y") {
                     System.out.println(eq.getName() + " has been equipped and " + ring.getName() + " has been sold for " + ring.getLevel() * 10 + ".");
                     addCoins(ring.getLevel()*10);
+                    minusStats(ring);
+                    addStats(eq);
                     helm = eq;
                 }
                 else {

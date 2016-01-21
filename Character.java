@@ -137,6 +137,22 @@ public abstract class Character {
         return retstr;
     }
     
+    public void addStat(Equips eq) {
+        int[] effects = eq.getEstats();
+        strength += effects[0];
+        intelligence += effects[1];
+        dexterity += effects[2];
+        luck += effects[3];
+    }
+    
+    publiv void minusStats(Equips eq) {
+        int[] effects = eq.getEstats();
+        strength -= effects[0];
+        intelligence -= effects[1];
+        dexterity -= effects[2];
+        luck -= effects[3];
+    }
+    
     public abstract void move();
     
     public abstract void equip();
