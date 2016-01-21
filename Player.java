@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Player extends Character {
     
     public Player(String name) {
@@ -5,6 +7,8 @@ public class Player extends Character {
     }
     
     public void move() {
+        Scanner ui = new Scanner();
+        String answer;
         for ( ; roll > 0 ; roll--) {
             if (abs(x) + abs(y) > 5) {
                 if (x == 0) {
@@ -13,12 +17,22 @@ public class Player extends Character {
                         y--;
                     }
                     else {
-                        System.out.println("Would you like to move Up(0,-4) or to the Right(-1,-4)?");
+                        System.out.println("Would you like to move Up(0,-4) or to the Right(-1,-4)?\nPlease input 1 or 2.");
+                        answer = ui.next();
+                        while (answer != "1" || answer != "2") {
+                            System.out.println("Please input 1 or 2.");
+                            answer = ui.next();
+                        }
                     }
                 }
                 else if (y == 0) {
                     if (x > 0) {
-                        System.out.println("Would you like to move Up(4,1) or to the Left(4,0)?");
+                        System.out.println("Would you like to move Up(4,1) or to the Left(4,0)?\nPlease input 1 or 2.");
+                        answer = ui.next();
+                        while (answer != "1" || answer != "2") {
+                            System.out.println("Please input 1 or 2.");
+                            answer = ui.next();
+                        }
                     }
                     else {
                         x++;
@@ -30,7 +44,12 @@ public class Player extends Character {
                 if (abs(x) + abs(y) <  5) {
                     if (x == 0) {
                         if (y == 0) {
-                            System.out.println("Would you like to move Up(0,1) or to the Left(1,0)?");
+                            System.out.println("Would you like to move Up(0,1) or to the Left(1,0)?\nPlease input 1 or 2.");
+                            answer = ui.next();
+                            while (answer != "1" || answer != "2") {
+                                System.out.println("Please input 1 or 2.");
+                                answer = ui.next();
+                            }
                         }
                     else y++;
                     }
@@ -59,6 +78,7 @@ public class Player extends Character {
             }
             
         }
+        board.moveCharacter(this, x, y);
     }
         
     
