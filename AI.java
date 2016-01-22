@@ -1,4 +1,4 @@
-/* The AI version of a Character/Player */
+/* The computer version of a character */
 
 import java.util.Random;
 import java.util.Scanner;
