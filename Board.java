@@ -1,4 +1,4 @@
-/* Controls the board and gets place of players on the board */
+/* Controls the playing field and the characters moving on it */
 
 import java.util.ArrayList;
 
@@ -10,12 +10,12 @@ public class Board {
     
     public Board(String playername, int numagainst) {
         players.add(new Player(playername));
-        players.add(new AI("Player2", ));
-        players.add(new AI("Player3", ));
-        players.add(new AI("Player4", ));
-        for (int i = 0 ; i < positions.size() ; i++) {
-            for (int j = 0 ; j < positions.get(i).size()) {
-                //fill up board here
+        players.add(new AI("Player2", Math.random() * 3));
+        players.add(new AI("Player3", Math.random() * 3));
+        players.add(new AI("Player4", Math.random() * 3));
+        for (int i = 0 ; i < positions.length ; i++) {
+            for (int j = 0 ; j < positions[i].length) {
+                positions[i][j] = new Position();
             }
         }
     }
@@ -25,3 +25,4 @@ public class Board {
     }
     
 }
+

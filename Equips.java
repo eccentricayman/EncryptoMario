@@ -1,4 +1,4 @@
-/* Equips is a java class that makes */
+/* Equips is a java class that makes equippable items for characters */
 
 import java.util.ArrayList;
 

@@ -145,7 +145,7 @@ public abstract class Character {
         luck += effects[3];
     }
     
-    publiv void minusStats(Equips eq) {
+    public void minusStats(Equips eq) {
         int[] effects = eq.getEstats();
         strength -= effects[0];
         intelligence -= effects[1];
