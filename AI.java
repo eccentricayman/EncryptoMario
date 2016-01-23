@@ -1,24 +1,21 @@
-/* The AI version of a Character/Player */
+/* The computer version of a character */
 
 import java.util.Random;
 
 public class AI extends Character {
     
     private int difficulty;    
-        
+
+    //does not check if difficulty is from 0-3, because super needs to
+    //be first line; 0 == super easy, 1 == easy, 2 == normal, 3 == hard
+    //above will be imposed in Board.java
     public AI(String name, int diff) {
-        if (diff >= 0 && diff <= 3) {
-            int stat = 3*diff;
-            super(name, stat, stat, stat, stat);
-        }
-        else {
-            System.out.println("Remake this AI, difficulty range is from 0-3.");
-        }
+        super(name, 3 * diff, 3 * diff, 3 * diff, 3 * diff);
     }
     
     public void move() {
         for ( ; roll > 0 ; roll--) {
-            if (abs(x) + abs(y) > 5) {
+            if (Math.abs(x) + Math.abs(y) > 5) {
                 if (x == 0) {
                     if (y > 0) {
                         x--;
@@ -39,7 +36,7 @@ public class AI extends Character {
                 }
             }
             else {
-                if (abs(x) + abs(y) <  5) {
+                if (Math.abs(x) + Math.abs(y) <  5) {
                     if (x == 0) {
                         if (y == 0) {
                             System.out.println("Would you like to move Up(0,1) or to the Left(1,0)?");
@@ -73,7 +70,7 @@ public class AI extends Character {
         }
     }
     
-    public void equip() {
+    public void equip(Equips eq) {
         //random used to make AI have 50% chance of equipping new equip
         Random rand = new Random();
         int toss = -1;
@@ -84,7 +81,7 @@ public class AI extends Character {
             }
             else {
                 toss = (int)(rand.nextDouble());
-                if (toss = 0) {
+                if (toss == 0) {
                     addCoins(helm.getLevel() * 10);
                     minusStats(helm);
                     addStats(eq);
@@ -102,7 +99,7 @@ public class AI extends Character {
             }
             else {
                 toss = (int)(rand.nextDouble());
-                if (toss = 0) {
+                if (toss == 0) {
                     addCoins(armor.getLevel() * 10);
                     minusStats(armor);
                     addStats(eq);
@@ -120,7 +117,7 @@ public class AI extends Character {
             }
             else {
                 toss = (int)(rand.nextDouble());
-                if (toss = 0) {
+                if (toss == 0) {
                     addCoins(boots.getLevel() * 10);
                     minusStats(boots);
                     addStats(eq);
@@ -138,7 +135,7 @@ public class AI extends Character {
             }
             else {
                 toss = (int)(rand.nextDouble());
-                if (toss = 0) {
+                if (toss == 0) {
                     addCoins(amulet.getLevel() * 10);
                     minusStats(amulet);
                     addStats(eq);
@@ -156,7 +153,7 @@ public class AI extends Character {
             }
             else {
                 toss = (int)(rand.nextDouble());
-                if (toss = 0) {
+                if (toss == 0) {
                     addCoins(ring.getLevel() * 10);
                     minusStats(ring);
                     addStats(eq);

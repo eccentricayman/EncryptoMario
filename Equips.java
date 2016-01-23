@@ -1,4 +1,4 @@
-/* Equips is a java class that makes */
+/* Equips is a java class that makes equippable items for characters */
 
 import java.util.ArrayList;
 
@@ -14,18 +14,18 @@ public class Equips {
 
     public Equips(int level) {
         this.level = level;
-    	type = typeList[(int)(Math.random(4))];
-    	int num = (int)(Math.random(3));
-    	addStat(num,level);
+    	type = typeList[(int)(Math.random() * 4)];
+    	int num = (int)(Math.random() * 3);
+    	loadStat(num, level);
     	name = equip_desc[num] + " " + type + " of ";
-    	num = (int)(Math.random(3));
-    	addStat(num,level);
+    	num = (int)(Math.random() * 3);
+    	loadStat(num, level);
     	name += equip_type[num];
     }
     
-    public void addStat(int input, int level) {
+    public void loadStat(int input, int level) {
         if (input == 0) {
-    		effects[0] += 2*level;
+    		effects[0] += 2 * level;
     	}
     	if (input == 1) {
     		effects[1] += 2 * level;
@@ -34,21 +34,6 @@ public class Equips {
     		effects[3] += 2 * level;
     	}
     	else effects[2] += 2 * level;
-
-    	name = equip_desc[num] + " " + type + " of ";
-    	num = (int)(Math.random(3));
-    	if (input == 0) {
-    		effects[0] += 2*level;
-    	}
-    	if (input == 1) {
-    		effects[1] += 2 * level;
-    	}
-    	if (input == 2) { 
-    		effects[3] += 2 * level;
-    	}
-    	else effects[2] += 2 * level;
-    	
-    	name += equip_type[num];
     }
     
     public String getName() {
@@ -63,13 +48,18 @@ public class Equips {
         return effects;
     }
 
+    public int getLevel() {
+        return level;
+    }
+    
     public String toString() {
         String retstr = name + " -- Level " + level + "\n";
         retstr += "Stats:\n";
-        if (strength != 0) retstr += "Strength- " + strength + "\n";
-        if (intelligence != 0) retstr += "Intelligence- " + intelligence + "\n";
-        if (dexterity != 0) retstr += "Dexterity- " + dexterity + "\n";
-        if (luck != 0) retstr += "Luck- " + luck + "\n";
+        if (effects[0] != 0) retstr += "Strength- " + effects[0] + "\n";
+        if (effects[1] != 0) retstr += "Intelligence- " + effects[1] + "\n";
+        if (effects[2] != 0) retstr += "Dexterity- " + effects[2] + "\n";
+        if (effects[3] != 0) retstr += "Luck- " + effects[3] + "\n";
+        return retstr;
     }
 	
 }

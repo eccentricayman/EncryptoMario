@@ -8,9 +8,9 @@
 
   + [X] Finish Character
   
-  + [ ] Extend with player
+  + [X] Extend with player
     
-  + [ ] Extend with AI
+  + [X] Extend with AI
           
   + [X] Finish equip
     - [X] Include luck factor
@@ -34,4 +34,6 @@
   + [ ] Finish tutorial
     - Teaches the player how to play through instructions.
     - If time permits, the tutorial will have an example game.
-          
+       
+  + [ ] Finish Chest
+    - Chest is the java class that contains an Equip.
