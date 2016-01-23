@@ -11,6 +11,7 @@ public class AI extends Character {
     //above will be imposed in Board.java
     public AI(String name, int diff) {
         super(name, 3 * diff, 3 * diff, 3 * diff, 3 * diff);
+        playa = false;
     }
     
     public void move() {

@@ -4,6 +4,7 @@ public class Player extends Character {
     
     public Player(String name) {
         super(name, 5, 5, 5, 5);
+        playa = true;
     }
     
     public void move() {

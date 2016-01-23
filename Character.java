@@ -23,6 +23,9 @@ public abstract class Character {
     //character positions
     protected int x = 0;
     protected int y = 0;
+    
+    //player or AI
+    protected boolean playa;
         
     //roll
     protected int roll = -1;
@@ -77,6 +80,10 @@ public abstract class Character {
 
     public int getY() {
         return y;
+    }
+    
+    public boolean getPlaya() {
+        return playa;
     }
 
     public void addCoins(int toadd) {
