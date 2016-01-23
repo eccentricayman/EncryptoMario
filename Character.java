@@ -18,7 +18,6 @@ public abstract class Character {
     protected Equips amulet;
     protected Equips ring;
     protected int coins;
-    protected int keys;
     protected int stars;
 
     //character positions
@@ -89,15 +88,6 @@ public abstract class Character {
         }
     }
     
-    public void addKeys(int toadd) {
-        if (keys + toadd > 0) {
-            keys += toadd;
-        }
-        else {
-            keys = 0;
-        }
-    }
-    
     public void addStars(int toadd) {
         if (stars + toadd > 0) {
             stars += toadd;
@@ -111,14 +101,6 @@ public abstract class Character {
     	
     }
     
-    public void c2K() {
-    	if(coins >= 10) {
-    		coins-=10;
-    		keys+=1;
-    	}
-    	else System.out.println("u broke boi, get more coins...");
-    }
-    
     public String toString() {
         String retstr = new String();
         retstr += name;
@@ -126,7 +108,6 @@ public abstract class Character {
         retstr += "Intelligence: " + intelligence;
         retstr += "Dexterity: " + dexterity;
         retstr += "Coins: " + coins;
-        retstr += "Keys: " + keys;
         retstr += "Stars: " + stars;
         retstr += "Equips:";
         retstr += helm.toString();

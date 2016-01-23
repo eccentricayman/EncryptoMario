@@ -4,20 +4,10 @@ public abstract class Position {
     
     private String characters = "";
     //replaced eventnum with object event, will do instanceof event
-    private Object event;
-    private int xcoord, ycoord;
-    private abstract eventName;
+    private abstract String eventName;
     
-    
-    
-    public Position(int x, int y) {
-        xcoord = x;
-        ycoord = y;
-    }
-
-    public Position(int x, int y, Object thisevent) {
-        this(x, y);
-        event = thisevent;
+    public Position(String eName) {
+        eventName = eName;
     }
     
     public void addCharacter(Character toadd) {
@@ -28,17 +18,6 @@ public abstract class Position {
         characters = "";
     }
     
-    public int getX() {
-        return xcoord;
-    }
-
-    public int getY() {
-        return ycoord;
-    }
+    public abstract void triggerEvent(Character Boy_X);
     
-    public abstract void triggerEvent();
-    
-    public String getEventName() {
-        return eventName;
-    }
 }
