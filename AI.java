@@ -1,7 +1,6 @@
 /* The AI version of a Character/Player */
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class AI extends Character {
     

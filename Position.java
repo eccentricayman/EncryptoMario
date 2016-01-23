@@ -1,11 +1,12 @@
 /* Position is a class that manages a single position on the map */
 
-public class Position {
+public abstract class Position {
     
     private String characters = "";
     //replaced eventnum with object event, will do instanceof event
     private Object event;
     private int xcoord, ycoord;
+    private abstract eventName;
     
     
     
@@ -20,11 +21,11 @@ public class Position {
     }
     
     public void addCharacter(Character toadd) {
-        characters.add(toadd);
+        characters = toadd.getName();
     }
 
-    public void removeCharacter(Character torm) {
-        characters.remove(torm);
+    public void removeCharacter() {
+        characters = "";
     }
     
     public getX() {
@@ -35,4 +36,9 @@ public class Position {
         return ycoord;
     }
     
+    public abstract void triggerEvent();
+    
+    public String getEventName() {
+        return eventName;
+    }
 }
