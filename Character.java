@@ -5,30 +5,28 @@ import java.util.ArrayList;
 public abstract class Character {
     
     //character stats
-    private String name;
-    private int strength;
-    private int intelligence;
-    private int dexterity;
-    private int luck;
+    protected String name;
+    protected int strength;
+    protected int intelligence;
+    protected int dexterity;
+    protected int luck;
 
     //character items
-    private Equips helm;
-    private Equips armor;
-    private Equips boots;
-    private Equips amulet;
-    private Equips ring;
-    private int coins;
-    private int keys;
-    private int stars;
+    protected Equips helm;
+    protected Equips armor;
+    protected Equips boots;
+    protected Equips amulet;
+    protected Equips ring;
+    protected int coins;
+    protected int keys;
+    protected int stars;
 
     //character positions
-    //private int x = 0;
-    //private int y = 0;
-    //perhaps we should use this instead?
-    private Position currentpos;
-    
+    protected int x = 0;
+    protected int y = 0;
+        
     //roll
-    private int roll = -1;
+    protected int roll = -1;
     
     public Character(String name) {
         this.name = name;
@@ -75,11 +73,11 @@ public abstract class Character {
     }
     
     public int getX() {
-        currentpos.getX();
+        return x;
     }
 
     public int getY() {
-        currentpos.getY();
+        return y;
     }
 
     public void addCoins(int toadd) {
@@ -131,13 +129,15 @@ public abstract class Character {
         retstr += "Keys: " + keys;
         retstr += "Stars: " + stars;
         retstr += "Equips:";
-        for (int i = 0 ; i < items.size() ; i++) {
-            retstr += items.get(i).toString();
-        }
+        retstr += helm.toString();
+        retstr += armor.toString();
+        retstr += boots.toString();
+        retstr += amulet.toString();
+        retstr += ring.toString();
         return retstr;
     }
     
-    public void addStat(Equips eq) {
+    public void addStats(Equips eq) {
         int[] effects = eq.getEstats();
         strength += effects[0];
         intelligence += effects[1];
@@ -155,6 +155,6 @@ public abstract class Character {
     
     public abstract void move();
     
-    public abstract void equip();
+    public abstract void equip(Equips eq);
     
 }
