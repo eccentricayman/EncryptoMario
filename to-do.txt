@@ -8,9 +8,9 @@
 
   + [X] Finish Character
   
-  + [ ] Extend with player
+  + [X] Extend with player
     
-  + [ ] Extend with AI
+  + [X] Extend with AI
           
   + [X] Finish equip
     - [X] Include luck factor
