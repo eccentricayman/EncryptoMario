@@ -17,6 +17,6 @@ public class Tutorial {
         + "6) Winning (The Important Chapter)\n";
     private String basics =
         "The basic commands are mainly outline by the prompts:
-    
+
 }
 
