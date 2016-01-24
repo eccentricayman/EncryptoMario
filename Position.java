@@ -1,21 +1,24 @@
 /* Position is a class that manages a single position on the map */
 
+import java.util.Arraylist;
+
 public abstract class Position {
     
-    private String characters = "";
+    private Arraylist<Character> characters;
     //replaced eventnum with object event, will do instanceof event
     private String eventName;
     
     public Position(String eName) {
         eventName = eName;
+        characters = new ArrayList<Character>();
     }
     
     public void addCharacter(Character toadd) {
-        characters = toadd.getName();
+        characters.add(toadd);
     }
 
     public void clearCharacter() {
-        characters = "";
+        characters = new ArrayList<Character>();
     }
     
     public String getEName() {
