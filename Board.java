@@ -7,13 +7,17 @@ public class Board {
     private ArrayList<Character> players;
     //2D arraylist of positions used as the board
     private Position[][] positions = Position[11][11];
+    private Character[][] ranking = Character[4][0]
     
     
     //Constructor
-    public Board() {
+    public Board(Character one, Character two, Character three, Character four) {
         shuffle();
+        ranking[0] = {one, two, three, four};
+        ranking[1] = {null,null,null};
+        ranking[2] = {null,null};
+        ranking[3] = {null,null};
     }
-    
     
     //Methods
     public void addC(Character Boy_X) {
@@ -71,8 +75,53 @@ public class Board {
         else if (val < 90) positions[x][y] = new Bandit();
         else positions[x][y] = new Dimbling();
     }
+    
+    public void setRanking(Character one, Character two, Character three, Character four) {
+        resetRanking(); 
+        int[] numRank = new int[4];
+        numRank[0] = (int)Math.pow(one.getCoins(), one.getStars() + 1);
+        numRank[1] = (int)Math.pow(two.getCoins(), two.getStars() + 1);
+        numRank[2] = (int)Math.pow(three.getCoins(), three.getStars() + 1);
+        numRank[3] = (int)Math.pow(four.getCoins(), four.getStars() + 1);
+        int sorted = 0;
+        int threshold = 0;
+        int max;
+        int rank = 1;
+        while (sorted < 4) {
+            max = 0;
+            for (int x = 0; x<4; x++) {
+                if (sorted == 0) if(numRank[x] > max) max = numRank[x]; 
+                else if (numRank[x] < threshold) if(numRank[x] > max) max = numRank[x];
+            }
+            for (int x = 0) x<4; x++) {
+                if (numRank[x] == max) {
+                    setRank(rank, x, one, two, three, four);
+                    sorted++;
+                }
+            }
+            threshold = max;
+            rank++;
+        }
+    }
+    
+    public void resetRanking() {
+        ranking = Character[4][0];
+        ranking[0] = {null,null,null,null};
+        ranking[1] = {null,null,null};
+        ranking[2] = {null,null};
+        ranking[3] = {null};
+    }
+    
+    public void setRank(int rank, int indicator, Character one, Character two, Character three, Character four) {
+        int x = 0;
+        for( ; ranking[rank][x] == null; x++)
+        if (indicator == 0) ranking[rank][x] = one;
+        else if (indicator == 1) ranking[rank][x] = two;
+        else if (indicator == 2) ranking[rank][x] = three;
+        else if (indicator == 3) ranking[rank][x] = four;
+    }
 
-    public void showMap(Character Boy_w, Character Boy_x, Character Boy_y, Character Boy_Z) {
+    public void showMap(Character Boy_x) {
         System.out.println()
     }
     
