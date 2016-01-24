@@ -4,7 +4,7 @@ public abstract class Position {
     
     private String characters = "";
     //replaced eventnum with object event, will do instanceof event
-    private abstract String eventName;
+    private String eventName;
     
     public Position(String eName) {
         eventName = eName;
