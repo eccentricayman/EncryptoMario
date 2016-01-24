@@ -47,7 +47,7 @@ public class Bandit extends Position {
         }
         else {
             System.out.println("J: Aight leggooo.");
-            int val = (int)( ( (Math.random() * 5) * .1) * Boy_X.getCoins() );
+            int val = (int)((int)(Math.random() * 6) * .1 * Boy_X.getCoins() );
             System.out.println("System Voice: Jerky robbed " + Boy_X.getName() + " for " + val + " coins.");
             Boy_X.addCoins(-1 * val);
             System.out.println("System Voice: " + trapper.getName() + " gained " + val + " coins.");

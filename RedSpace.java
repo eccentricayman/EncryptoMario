@@ -1,6 +1,6 @@
-public class coinsMinus extends Position {
+public class RedSpace extends Position {
     
-    public coinsMinus() {
+    public RedSpace() {
         super("Red Space");
     }
     

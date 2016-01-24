@@ -14,10 +14,19 @@ public abstract class Position {
         characters = toadd.getName();
     }
 
-    public void removeCharacter() {
+    public void clearCharacter() {
         characters = "";
     }
     
+    public String getEName() {
+        return eventName;
+    }
+    
     public abstract void triggerEvent(Character Boy_X);
+    
+    public String look(Character Boy_X) {
+        if (characters == Boy_X.getName()) return "[C]";
+        else return "[ ]";
+    }
     
 }

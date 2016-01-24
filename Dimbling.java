@@ -25,37 +25,37 @@ public class Dimbling extends Position {
                     
                     System.out.print("System Voice: The first roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
                     System.out.print("System Voice: The second roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
                     System.out.print("System Voice: The third roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
                     System.out.print("System Voice: The fourth roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
                     System.out.print("System Voice: The fifth roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
                     System.out.print("System Voice: The sixth roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
@@ -88,37 +88,37 @@ public class Dimbling extends Position {
                     
                     System.out.print("System Voice: The first roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
                     System.out.print("System Voice: The second roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
                     System.out.print("System Voice: The third roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
                     System.out.print("System Voice: The fourth roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
                     System.out.print("System Voice: The fifth roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     
                     System.out.print("System Voice: The sixth roll is... ");
                     input = ui.next();
-                    val = ((int)(Math.random() * 5)) + 1;
+                    val = ((int)(Math.random() * 6)) + 1;
                     System.print.ln(val);
                     list[val]++;
                     

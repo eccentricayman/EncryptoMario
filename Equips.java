@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Equips {
     
-    public static final String[] equip_desc = {"Savage", "Smart","Fortunate","Fast"};
+    public static final String[] equip_desc = {"Savage", "Smart","Fast","Fortunate"};
     public static final String[] typeList = {"Helm", "Armor", "Boots", "Amulet", "Ring"};
-	public static final String[] equip_type = {"Power", "Intelligence", "Luck", "Speed"};
+	public static final String[] equip_type = {"Power", "Intelligence", "Speed", "Luck"};
     private int[] effects = {0, 0, 0, 0};
     private String name;
     private String type;
@@ -14,11 +14,11 @@ public class Equips {
 
     public Equips(int level) {
         this.level = level;
-    	type = typeList[(int)(Math.random() * 4)];
-    	int num = (int)(Math.random() * 3);
+    	type = typeList[(int)(Math.random() * 5)];
+    	int num = (int)(Math.random() * 4);
     	loadStat(num, level);
     	name = equip_desc[num] + " " + type + " of ";
-    	num = (int)(Math.random() * 3);
+    	num = (int)(Math.random() * 4);
     	loadStat(num, level);
     	name += equip_type[num];
     }
@@ -27,13 +27,13 @@ public class Equips {
         if (input == 0) {
     		effects[0] += 2 * level;
     	}
-    	if (input == 1) {
+    	else if (input == 1) {
     		effects[1] += 2 * level;
     	}
-    	if (input == 2) { 
-    		effects[3] += 2 * level;
+    	else if (input == 2) { 
+    		effects[2] += 2 * level;
     	}
-    	else effects[2] += 2 * level;
+    	else effects[3] += 2 * level;
     }
     
     public String getName() {

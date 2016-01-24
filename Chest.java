@@ -8,7 +8,7 @@ public class Chest extends Position {
     
     public Chest(int Phase) {
         super("Chest");
-        type = types[(int)(Math.random() * 2)];
+        type = types[(int)(Math.random() * 3)];
         req = Phase*5 + Math.random()*Phase*2;
         treasure = new Equips();
     }
