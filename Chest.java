@@ -11,6 +11,11 @@ public class Chest extends Position {
         type = types[(int)(Math.random() * 3)];
         req = Phase*5 + Math.random()*Phase*2;
         treasure = new Equips();
+        full = true;
+    }
+    
+    public boolean isFull() {
+        return full;
     }
     
     public void triggerEvent(Character Boy_X) {

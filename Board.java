@@ -120,6 +120,10 @@ public class Board {
         else if (indicator == 2) ranking[rank][x] = three;
         else if (indicator == 3) ranking[rank][x] = four;
     }
+    
+    public Position getPos(int x, int y) {
+        return positions[x][y];
+    }
 
     public void showMap(int Phase, Character Boy_x) {
         String temp;

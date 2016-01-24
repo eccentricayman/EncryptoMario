@@ -7,7 +7,7 @@ public class Player extends Character {
         playa = true;
     }
     
-    public void move() {
+    public void move(int phase, Board ex) {
         Scanner ui = new Scanner(System.in);
         String answer;
         for ( ; roll > 0 ; roll--) {
@@ -18,6 +18,7 @@ public class Player extends Character {
                         y--;
                     }
                     else {
+                        ex.showMap(phase,this);
                         System.out.println("Would you like to move Up(0,-4) or to the Right(-1,-4)?\nPlease input 1 or 2.");
                         answer = ui.nextLine();
                         while (answer != "1" && answer != "2") {
@@ -33,6 +34,7 @@ public class Player extends Character {
                 }
                 else if (y == 0) {
                     if (x > 0) {
+                        ex.showMap(phase,this);
                         System.out.println("Would you like to move Up(4,1) or to the Left(4,0)?\nPlease input 1 or 2.");
                         answer = ui.nextLine();
                         while (answer != "1" && answer != "2") {
@@ -55,6 +57,7 @@ public class Player extends Character {
                 if (Math.abs(x) + Math.abs(y) <  5) {
                     if (x == 0) {
                         if (y == 0) {
+                            ex.showMap(phase,this);
                             System.out.println("Would you like to move Up(0,1) or to the Left(-1,0)?\nPlease input 1 or 2.");
                             answer = ui.nextLine();
                             while (answer != "1" && answer != "2") {
