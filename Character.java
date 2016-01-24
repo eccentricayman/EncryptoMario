@@ -81,6 +81,11 @@ public abstract class Character {
     public boolean getPlaya() {
         return playa;
     }
+    
+    public String getRoll() {
+        if (roll == -1) return "R";
+        else return ""+roll;
+    }
 
     public void addCoins(int toadd) {
         if (coins + toadd > 0) {
@@ -100,8 +105,9 @@ public abstract class Character {
         }
     }
     
-    public void roll() {
-    	
+    public int roll() {
+    	roll = ((int)(Math.random()*6)) + 1;
+    	return roll;
     }
     
     public String toString() {

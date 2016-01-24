@@ -1,3 +1,5 @@
+import java.util.Scanner
+
 public class Dimbling extends Position {
     
     public Dimbling() {
