@@ -47,6 +47,7 @@ public class Game {
         Board game = new Board(one, two, three, four);
         int opened;
         for (int phase = 1; phase<(EndPhase+1); phase++) {
+            if (phase != 1) game.shuffle();
             while (opened < 3) {
                 opened = 0;
                 
@@ -74,6 +75,22 @@ public class Game {
                 if(! game.getPos[10][5]).isFull()) opened++;
                 if(! game.getPos[0][5]).isFull()) opened++;
                 if(! game.getPos[5][0]).isFull()) opened++;
+            }
+        }
+        
+        System.out.println("System Voice: The game has come to an end in " + EndPhase + " phases.");
+        System.out.println("System Voice: Here is the end ranking.");
+        
+        for(int rank = 1; rank < 5; rank++) {
+            for(int x = 0; game.getRanking[rank-1][x] == null; x++) {
+                Character c = game.getRanking[rank-1][x];
+                System.out.println("Rank " + rank + ": " + c.getName());
+                System.out.println("Stars: " + c.getStars());
+                System.out.println("Coins: " + c.getCoins());
+                System.out.println("Stats: ");
+                System.out.println("Strength- " + c.getStrength());
+                System.out.println("Intelligence- " + c.getIntelligence());
+                System.out.println("Dexterity- " + c.getDexterity() + "\n");
             }
         }
         

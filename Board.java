@@ -124,6 +124,10 @@ public class Board {
     public Position getPos(int x, int y) {
         return positions[x][y];
     }
+    
+    public Character[][] getRanking() {
+        return ranking;
+    }
 
     public void showMap(int Phase, Character Boy_x) {
         String temp;
