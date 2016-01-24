@@ -121,8 +121,28 @@ public class Board {
         else if (indicator == 3) ranking[rank][x] = four;
     }
 
-    public void showMap(Character Boy_x) {
-        System.out.println()
+    public void showMap(int Phase, Character Boy_x) {
+        String temp;
+        System.out.println("Phase: " + Phase + "  Character: " + Boy_X.getName() + "  Roll: " + Boy_X.getRoll() + "  Coins: " + Boy_X.getCoins() + "  Stars: " + Boy_X.getStars + "\n");
+        temp = "";
+        for (int x = 0; ranking[1][x] == null; x++) temp+= ranking[1][x].getName() + " ";
+        System.out.println("                    " + positions[5][10].look(Boy_X) + "                     1st: " + temp + "\n");
+        temp = "";
+        for (int x = 0; ranking[1][x] == null; x++) temp+= ranking[1][x].getName() + " ";
+        System.out.println("                " + positions[4][9].look(Boy_X) + " " + positions[5][9].look(Boy_X) + " " + positions[6][9].look(Boy_X) + "                 2nd: " + temp + "\n");
+        temp = "";
+        for (int x = 0; ranking[1][x] == null; x++) temp+= ranking[1][x].getName() + " ";
+        System.out.println("            " + positions[3][8].look(Boy_X) + "     " + positions[5][8].look(Boy_X) + "     " + positions[7][8].look(Boy_X) + "             3rd: " + temp + "\n");
+        temp = "";
+        for (int x = 0; ranking[1][x] == null; x++) temp+= ranking[1][x].getName() + " ";
+        System.out.println("        " + positions[2][7].look(Boy_X) + "         " + positions[5][7].look(Boy_X) + "         " + positions[8][7].look(Boy_X) + "         4th: " + temp + "\n");
+        System.out,println("    " + positions[1][6].look(Boy_X) + "             " + positions[5][6].look(Boy_X) + "             " + positions[9][6].look(Boy_X) + "\n");
+        System.out.println(positions[0][5].look(Boy_X) + " " + positions[1][5].look(Boy_X) + " " + positions[2][5].look(Boy_X) + " " + positions[3][5].look(Boy_X) + " " + positions[4][5].look(Boy_X) + " " + positions[5][5].look(Boy_X) + " " + positions[6][5].look(Boy_X) + " " + positions[7][5].look(Boy_X) + " " + positions[8][5].look(Boy_X) + " " + positions[9][5].look(Boy_X) + " " + positions[10][5].look(Boy_X) + "\n");
+        System.out.println("    " + positions[1][4].look(Boy_X) + "             " + positions[5][4].look(Boy_X) + "             " + positions[9][4].look(Boy_X) + "\n");
+        System.out.println("        " + positions[2][3].look(Boy_X) + "         " + positions[5][3].look(Boy_X) + "         " + positions[8][3].look(Boy_X) + "\n");
+        System.out.println("            " + positions[3][2].look(Boy_X) + "     " + positions[5][2].look(Boy_X) + "     " + positions[7][2].look(Boy_X) + "\n");
+        System.out.println("                " + positions[4][1].look(Boy_X) + " " + positions[5][1].look(Boy_X) + " " + positions[6][1].look(Boy_X) + "\n");
+        System.out.println("                    " + positions[5][0].look(Boy_X) + "\n");
     }
     
     
