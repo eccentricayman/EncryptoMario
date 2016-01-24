@@ -102,7 +102,6 @@ public class Board {
             threshold = max;
             rank++;
         }
-    }
     
     public void resetRanking() {
         ranking = Character[4][0];
