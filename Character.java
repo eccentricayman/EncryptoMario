@@ -66,10 +66,6 @@ public abstract class Character {
         return coins;
     }
     
-    public int getKeys() {
-        return keys;
-    }
-    
     public int getStars() {
         return stars;
     }
