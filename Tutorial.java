@@ -120,7 +120,7 @@ public class Tutorial {
         + "OR\n"
         + "N) Play the game";
         
-    public static void viewevents() {
+    private static void viewevents() {
         String answer = "";
         Scanner ui = new Scanner(System.in);
         while (!(answer.equals("N"))) {
