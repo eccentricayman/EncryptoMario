@@ -143,7 +143,7 @@ public abstract class Character {
         luck -= effects[3];
     }
     
-    public abstract void move();
+    public abstract void move(int phase, Board ex);
     
     public abstract void equip(Equips eq);
     

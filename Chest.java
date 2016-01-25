@@ -1,6 +1,6 @@
 public class Chest extends Position {
     
-    public static final String[] equip_desc = {"Strength", "Intelligence","Dexterity"};
+    public static final String[] types = {"Strength", "Intelligence","Dexterity"};
     private String type;
     private int req;
     private boolean full;
@@ -9,8 +9,8 @@ public class Chest extends Position {
     public Chest(int Phase) {
         super("Chest");
         type = types[(int)(Math.random() * 3)];
-        req = Phase*5 + Math.random()*Phase*2;
-        treasure = new Equips();
+        req = (int)(Phase*5 + Math.random()*Phase*2);
+        treasure = new Equips(Phase);
         full = true;
     }
     
@@ -20,7 +20,7 @@ public class Chest extends Position {
     
     public void triggerEvent(Character Boy_X) {
         if (full) {
-            boolean pass;
+            boolean pass = true;
             
             if (type == "Strength") pass = Boy_X.getStrength() >= req;
             else if (type == "Intelligence") pass = Boy_X.getIntelligence() >= req;

@@ -16,7 +16,7 @@ public class Bandit extends Position {
             System.out.println("J: Hi, I'm the bandit Jerky ;)\nJ: I can attempt to pickpocket the next person who arrives here for a quarter of your coins.");
             System.out.println("J: Would you like me to do so?");
             if (Boy_X.getPlaya()) {
-                Scanner ui = new Scanner();
+                Scanner ui = new Scanner(System.in);
                 System.out.println("Enter 1 (yes) or 2 (no).");
                 String input = ui.next();
                 while (input != "1" && input != "2") {
@@ -24,8 +24,8 @@ public class Bandit extends Position {
                     input = ui.next();
                 }
                 if (input == "1") {
-                        int val = (int)(Boy_X.getCoins * .25);
-                        System.out.println( Boy_X.name() + " gave " + val + " coins.");
+                        int val = (int)(Boy_X.getCoins() * .25);
+                        System.out.println( Boy_X.getName() + " gave " + val + " coins.");
                         Boy_X.addCoins(-1 * val);
                         trap = true;
                         trapper = Boy_X;
@@ -35,8 +35,8 @@ public class Bandit extends Position {
             }
             else {
                 if (Boy_X.getCoins() >= 10) {
-                    int val = (int)(Boy_X.getCoins * .25);
-                    System.out.println( Boy_X.name() + " gave " + val + " coins.");
+                    int val = (int)(Boy_X.getCoins() * .25);
+                    System.out.println( Boy_X.getName() + " gave " + val + " coins.");
                     Boy_X.addCoins(-1 * val);
                     trap = true;
                     trapper = Boy_X;
