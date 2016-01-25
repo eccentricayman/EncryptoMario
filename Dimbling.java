@@ -31,37 +31,37 @@ public class Dimbling extends Position {
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     System.out.print("System Voice: The second roll is... ");
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     System.out.print("System Voice: The third roll is... ");
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     System.out.print("System Voice: The fourth roll is... ");
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     System.out.print("System Voice: The fifth roll is... ");
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     System.out.print("System Voice: The sixth roll is... ");
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     val = 0;
                     for (int x : list) {
@@ -94,37 +94,37 @@ public class Dimbling extends Position {
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     System.out.print("System Voice: The second roll is... ");
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     System.out.print("System Voice: The third roll is... ");
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     System.out.print("System Voice: The fourth roll is... ");
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     System.out.print("System Voice: The fifth roll is... ");
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     System.out.print("System Voice: The sixth roll is... ");
                     input = ui.next();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
-                    list[val]++;
+                    list[val-1]++;
                     
                     val = 0;
                     for (int x : list) {

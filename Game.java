@@ -69,12 +69,16 @@ public class Game {
             while (opened < 3) {
                 opened = 0;
                 
+                game.setRanking(one,two,three,four);
                 playTurn(one, phase, game);
                 
+                game.setRanking(one,two,three,four);
                 playTurn(two, phase, game);
                 
+                game.setRanking(one,two,three,four);
                 playTurn(three, phase, game);
                 
+                game.setRanking(one,two,three,four);
                 playTurn(four, phase, game);
                 
                 opened = getOpened(game);

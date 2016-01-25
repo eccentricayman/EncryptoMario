@@ -96,11 +96,11 @@ public class Board {
             max = 0;
             for (int x = 0; x<4; x++) {
                 if (sorted == 0) if(numRank[x] >= max) max = numRank[x]; 
-                else if (numRank[x] < threshold) if(numRank[x] >= max) max = numRank[x];
+                else if (numRank[x] < threshold) if(numRank[x] > max) max = numRank[x];
             }
             for (int x = 0; x<4; x++) {
                 if (numRank[x] == max) {
-                    setRank(rank, x, one, two, three, four);
+                    setRank(rank - 1, x, one, two, three, four);
                     sorted++;
                 }
             }
