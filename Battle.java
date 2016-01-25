@@ -15,7 +15,7 @@ public class Battle extends Position {
         defender = accepter;
         chealth = challenger.getStrength() + challenger.getDefense() + challenger.getDexterity() + challenger.getLuck();
         dhealth = defender.getStrength() + defender.getDefense() + defender.getDexterity() + defender.getLuck();
-        challenger.setCoins(challenger.getCoins() / 10); 
+        challenger.addCoins(-1 * challenger.getCoins() / 10); 
     }
 
     private String cdamage() {
@@ -25,12 +25,12 @@ public class Battle extends Position {
         if (crit != 0) {
             int damage = challenger.getStrength() * (challenger.getDexterity() / 2);
             dhealth -= damage;
-            retstr += Challenger.getName() + " critted for " + damage + "!";
+            retstr += challenger.getName() + " critted for " + damage + "!";
         }
         else {
             int damage = challenger.getStrength();
             dhealth -= damage;
-            retstr += Challenger.getName() + " dealt " + damage + "."; 
+            retstr += challenger.getName() + " dealt " + damage + "."; 
         }
         return retstr;
     }
@@ -69,7 +69,7 @@ public class Battle extends Position {
         return retstr;
     }
     
-    public void toBattle() {
+    public void toBattle() throws InterruptedException {
         String progress = "|/-\\";
         int ctr = 0;
         while (chealth != 0 || dhealth != 0) {
