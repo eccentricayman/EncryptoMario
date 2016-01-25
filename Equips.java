@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Equips {
     
-    public static final String[] equip_desc = {"Savage", "Smart","Fast","Fortunate"};
+    public static final String[] equip_desc = {"Savage", "Sturdy","Fast","Fortunate"};
     public static final String[] typeList = {"Helm", "Armor", "Boots", "Amulet", "Ring"};
-	public static final String[] equip_type = {"Power", "Intelligence", "Speed", "Luck"};
+	public static final String[] equip_type = {"Power", "Resilience", "Speed", "Luck"};
     private int[] effects = {0, 0, 0, 0};
     private String name;
     private String type;
@@ -55,10 +55,10 @@ public class Equips {
     public String toString() {
         String retstr = name + " -- Level " + level + "\n";
         retstr += "Stats:\n";
-        if (effects[0] != 0) retstr += "Strength- " + effects[0] + "\n";
-        if (effects[1] != 0) retstr += "Intelligence- " + effects[1] + "\n";
-        if (effects[2] != 0) retstr += "Dexterity- " + effects[2] + "\n";
-        if (effects[3] != 0) retstr += "Luck- " + effects[3] + "\n";
+        if (effects[0] != 0) retstr += "Strength - " + effects[0] + "\n";
+        if (effects[1] != 0) retstr += "Defense - " + effects[1] + "\n";
+        if (effects[2] != 0) retstr += "Dexterity - " + effects[2] + "\n";
+        if (effects[3] != 0) retstr += "Luck - " + effects[3] + "\n";
         return retstr;
     }
 	

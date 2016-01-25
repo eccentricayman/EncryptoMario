@@ -3,8 +3,8 @@
 - Get Syntax Highlighting: "M-x org-mode RET"
 - Mark Task Complete/Mark Task Incomplete: "C-c C-c"
 - Create new Task: "S-M RET" 
-
-  ** TODO [25%]
+  
+** TODO [54%]
 
   + [X] Finish Character
   
@@ -20,7 +20,7 @@
     - Board should manage all player positions, equip positions, chest positions, and star positions.
     - Board should have a 2D arraylist of positions and is how the character moves.
 
-  + [ ] Finish position
+  + [X] Finish position
     - Position class manages current position of one player  
 
   + [ ] Finish Main (The File to run in terminal when everything is done)
@@ -35,5 +35,10 @@
     - Teaches the player how to play through instructions.
     - If time permits, the tutorial will have an example game.
        
-  + [ ] Finish Chest
+  + [X] Finish Chest
     - Chest is the java class that contains an Equip.
+  
+  + [-] Create multiple events at positions
+    - [ ] Battles
+    - [X] Bandits
+    - [X] Blue Spaces

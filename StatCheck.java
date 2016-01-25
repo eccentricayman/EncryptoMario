@@ -5,16 +5,16 @@ import java.util.ArrayList;
 
 public class StatCheck {
     
-    private int strnreq;
-    private int intlreq;
-    private int dextreq;
+    private int strreq;
+    private int defreq;
+    private int dexreq;
     private ArrayList<Character> players;
     private Object special;
 
-    public StatCheck(int strn, int intl, int dext) {
-        strnreq = strn;
-        intlreq= intl;
-        dextreq = dext;
+    public StatCheck(int str, int def, int dex) {
+        strreq = str;
+        defreq= def;
+        dexreq = dex;
     }
 
     public void addplayer(Character toadd) {
@@ -37,9 +37,9 @@ public class StatCheck {
     
     public boolean statCheck(Character tochk) {
         if (players.indexOf(tochk) != -1) {
-            if (tochk.getStrength() >= strnreq &&
-                tochk.getIntelligence() >= intlreq &&
-                tochk.getDexterity() >= dextreq) {
+            if (tochk.getStrength() >= strreq &&
+                tochk.getDefense() >= defreq &&
+                tochk.getDexterity() >= dexreq) {
                 return true;
             }
             else {
