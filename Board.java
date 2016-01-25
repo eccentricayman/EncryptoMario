@@ -6,8 +6,8 @@ public class Board {
 
     private ArrayList<Character> players;
     //2D arraylist of positions used as the board
-    private Position[][] positions = Position[11][11];
-    private Character[][] ranking = Character[4][0];
+    private Position[][] positions = new Position[11][11];
+    private Character[][] ranking = new Character[4][0];
     
     
     //Constructor
@@ -102,9 +102,10 @@ public class Board {
             threshold = max;
             rank++;
         }
+    }
     
     public void resetRanking() {
-        ranking = Character[4][0];
+        ranking = new Character[4][0];
         ranking[0] = new Character[] {null,null,null,null};
         ranking[1] = new Character[] {null,null,null};
         ranking[2] = new Character[] {null,null};

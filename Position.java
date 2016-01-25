@@ -1,10 +1,10 @@
 /* Position is a class that manages a single position on the map */
 
-import java.util.Arraylist;
+import java.util.ArrayList;
 
 public abstract class Position {
     
-    private Arraylist<Character> characters;
+    private ArrayList<Character> characters;
     //replaced eventnum with object event, will do instanceof event
     private String eventName;
     
@@ -28,7 +28,7 @@ public abstract class Position {
     public abstract void triggerEvent(Character Boy_X);
     
     public String look(Character Boy_X) {
-        if (characters == Boy_X.getName()) return "[C]";
+        if (characters.contains(Boy_X)) return "[C]";
         else return "[ ]";
     }
     
