@@ -141,8 +141,8 @@ public class Player extends Character {
                     System.out.println(eq.getName() + " has been equipped.");
                 }
                 else {
-                    addCoins(eq.getLevel()*10);
-                    System.out.println(eq.getName() + " sold for "+ eq.getLevel()*10 + " coins.");
+                    addCoins(eq.getWorth());
+                    System.out.println(eq.getName() + " sold for "+ eq.getWorth() + " coins.");
                 }
                 
             }
@@ -163,8 +163,8 @@ public class Player extends Character {
                     helm = eq;
                 }
                 else {
-                    addCoins(eq.getLevel()*10);
-                    System.out.println(eq.getName() + " sold for "+ eq.getLevel()*10 + " coins.");
+                    addCoins(eq.getWorth());
+                    System.out.println(eq.getName() + " sold for "+ eq.getWorth() + " coins.");
                 }
             }
         }
@@ -184,8 +184,8 @@ public class Player extends Character {
                     System.out.println(eq.getName() + " has been equipped.");
                 }
                 else {
-                    addCoins(eq.getLevel()*10);
-                    System.out.println(eq.getName() + " sold for "+ eq.getLevel()*10 + " coins.");
+                    addCoins(eq.getWorth());
+                    System.out.println(eq.getName() + " sold for "+ eq.getWorth() + " coins.");
                 }
                 
             }
@@ -206,8 +206,8 @@ public class Player extends Character {
                     helm = eq;
                 }
                 else {
-                    addCoins(eq.getLevel()*10);
-                    System.out.println(eq.getName() + " sold for "+ eq.getLevel()*10 + " coins.");
+                    addCoins(eq.getWorth());
+                    System.out.println(eq.getName() + " sold for "+ eq.getWorth() + " coins.");
                 }
             }
         }
@@ -227,8 +227,8 @@ public class Player extends Character {
                     System.out.println(eq.getName() + " has been equipped.");
                 }
                 else {
-                    addCoins(eq.getLevel()*10);
-                    System.out.println(eq.getName() + " sold for "+ eq.getLevel()*10 + " coins.");
+                    addCoins(eq.getWorth());
+                    System.out.println(eq.getName() + " sold for "+ eq.getWorth() + " coins.");
                 }
                 
             }
@@ -249,8 +249,8 @@ public class Player extends Character {
                     boots = eq;
                 }
                 else {
-                    addCoins(eq.getLevel()*10);
-                    System.out.println(eq.getName() + " sold for "+ eq.getLevel()*10 + " coins.");
+                    addCoins(eq.getWorth());
+                    System.out.println(eq.getName() + " sold for "+ eq.getWorth() + " coins.");
                 }
             }
         }
@@ -270,8 +270,8 @@ public class Player extends Character {
                     System.out.println(eq.getName() + " has been equipped.");
                 }
                 else {
-                    addCoins(eq.getLevel()*10);
-                    System.out.println(eq.getName() + " sold for "+ eq.getLevel()*10 + " coins.");
+                    addCoins(eq.getWorth());
+                    System.out.println(eq.getName() + " sold for "+ eq.getWorth() + " coins.");
                 }
                 
             }
@@ -292,8 +292,8 @@ public class Player extends Character {
                     amulet = eq;
                 }
                 else {
-                    addCoins(eq.getLevel()*10);
-                    System.out.println(eq.getName() + " sold for "+ eq.getLevel()*10 + " coins.");
+                    addCoins(eq.getWorth());
+                    System.out.println(eq.getName() + " sold for "+ eq.getWorth() + " coins.");
                 }
             }
         }
@@ -313,8 +313,8 @@ public class Player extends Character {
                     System.out.println(eq.getName() + " has been equipped.");
                 }
                 else {
-                    addCoins(eq.getLevel()*10);
-                    System.out.println(eq.getName() + " sold for "+ eq.getLevel()*10 + " coins.");
+                    addCoins(eq.getWorth());
+                    System.out.println(eq.getName() + " sold for "+ eq.getWorth() + " coins.");
                 }
                 
             }
@@ -335,8 +335,8 @@ public class Player extends Character {
                     helm = eq;
                 }
                 else {
-                    addCoins(eq.getLevel()*10);
-                    System.out.println(eq.getName() + " sold for "+ eq.getLevel()*10 + " coins.");
+                    addCoins(eq.getWorth());
+                    System.out.println(eq.getName() + " sold for "+ eq.getWorth() + " coins.");
                 }
             }
         }

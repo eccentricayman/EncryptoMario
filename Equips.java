@@ -61,5 +61,14 @@ public class Equips {
         if (effects[3] != 0) retstr += "Luck - " + effects[3] + "\n";
         return retstr;
     }
+
+    public int getWorth() {
+        int worth = 0;
+        worth += effects[0] * 2 * level;
+        worth += effects[1] * 2 * level;
+        worth += effects[2] * 3 * level;
+        worth += effects[3] * 5 * level;
+        return worth;
+    }
 	
 }
