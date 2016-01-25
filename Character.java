@@ -7,7 +7,7 @@ public abstract class Character {
     //character stats
     protected String name;
     protected int strength;
-    protected int intelligence;
+    protected int defense;
     protected int dexterity;
     protected int luck;
 
@@ -34,10 +34,10 @@ public abstract class Character {
         this.name = name;
     }
     
-    public Character(String name, int str, int Int, int dex, int luk) {
+    public Character(String name, int str, int def, int dex, int luk) {
         this.name = name;
         strength = str;
-        intelligence = Int;
+        defense = Int;
         dexterity = dex;
         luck = luk;
     }
@@ -50,8 +50,8 @@ public abstract class Character {
         return strength;
     }
     
-    public int getIntelligence() {
-        return intelligence;
+    public int getDefense() {
+        return defense;
     }
     
     public int getDexterity() {
@@ -114,7 +114,7 @@ public abstract class Character {
         String retstr = new String();
         retstr += name;
         retstr += "Strength: " + strength;
-        retstr += "Intelligence: " + intelligence;
+        retstr += "Defense: " + defense;
         retstr += "Dexterity: " + dexterity;
         retstr += "Coins: " + coins;
         retstr += "Stars: " + stars;
@@ -130,7 +130,7 @@ public abstract class Character {
     public void addStats(Equips eq) {
         int[] effects = eq.getEstats();
         strength += effects[0];
-        intelligence += effects[1];
+        defense += effects[1];
         dexterity += effects[2];
         luck += effects[3];
     }
@@ -138,7 +138,7 @@ public abstract class Character {
     public void minusStats(Equips eq) {
         int[] effects = eq.getEstats();
         strength -= effects[0];
-        intelligence -= effects[1];
+        defense -= effects[1];
         dexterity -= effects[2];
         luck -= effects[3];
     }
