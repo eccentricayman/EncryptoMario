@@ -23,7 +23,7 @@ public class Chest extends Position {
             boolean pass = true;
             
             if (type == "Strength") pass = Boy_X.getStrength() >= req;
-            else if (type == "Intelligence") pass = Boy_X.getIntelligence() >= req;
+            else if (type == "Defense") pass = Boy_X.getDefense() >= req;
             else if (type == "Dexterity") pass = Boy_X.getDexterity() >= req;
             
             System.out.println("StatCheck: " + type + " " + req);

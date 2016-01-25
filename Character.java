@@ -37,7 +37,7 @@ public abstract class Character {
     public Character(String name, int str, int def, int dex, int luk) {
         this.name = name;
         strength = str;
-        defense = Int;
+        defense = def;
         dexterity = dex;
         luck = luk;
     }
@@ -102,6 +102,42 @@ public abstract class Character {
         }
         else {
             stars = 0;
+        }
+    }
+    
+    public void addStrength(int toadd) {
+        if (strength + toadd > 0) {
+            strength += toadd;
+        }
+        else {
+            strength = 0;
+        }
+    }
+    
+    public void addDefense(int toadd) {
+        if (defense + toadd > 0) {
+            defense += toadd;
+        }
+        else {
+            defense = 0;
+        }
+    }
+    
+    public void addDexterity(int toadd) {
+        if (dexterity + toadd > 0) {
+            dexterity += toadd;
+        }
+        else {
+            dexterity = 0;
+        }
+    }
+    
+    public void addLuck(int toadd) {
+        if (luck + toadd > 0) {
+            luck += toadd;
+        }
+        else {
+            luck = 0;
         }
     }
     
