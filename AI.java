@@ -119,7 +119,7 @@ public class AI extends Character {
                     helm = eq;
                 }
                 else {
-                    addCoins(eq.getLevel() * 10);
+                    addCoins(eq.getWorth());
                 }
             }
         }
@@ -137,7 +137,7 @@ public class AI extends Character {
                     armor = eq;
                 }
                 else {
-                    addCoins(eq.getLevel() * 10);
+                    addCoins(eq.getWorth());
                 }
             }            
         }
@@ -155,7 +155,7 @@ public class AI extends Character {
                     boots = eq;
                 }
                 else {
-                    addCoins(eq.getLevel() * 10);
+                    addCoins(eq.getWorth());
                 }
             }            
         }
@@ -173,7 +173,7 @@ public class AI extends Character {
                     amulet = eq;
                 }
                 else {
-                    addCoins(eq.getLevel() * 10);
+                    addCoins(eq.getWorth());
                 }
             }            
         }
@@ -191,7 +191,7 @@ public class AI extends Character {
                     ring = eq;
                 }
                 else {
-                    addCoins(eq.getLevel() * 10);
+                    addCoins(eq.getWorth());
                 }
             }            
         }
