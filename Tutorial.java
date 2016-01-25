@@ -157,7 +157,7 @@ public class Tutorial {
         }       
     } 
 
-    public static void starttutorial() {
+    public static void starttutorial() throws Exception {
         String answer = "";
         Scanner ui = new Scanner(System.in);        
         while (!(answer.equals("N"))) {
