@@ -6,7 +6,7 @@ public class StatChange extends Position {
     
     public void triggerEvent(Character Boy_X) {
         int chance = ((int)(Math.random()*8 )) + 1;
-        int val = ((int)(Math.random()*10)) + 1;
+        int val = ((int)(Math.random()*5)) + 1;
         if (chance == 1) {
             System.out.println("An armadillo appears. The armadillo flees.");
             System.out.println("System Voice: " + Boy_X.getName() + " has gained " + val + " in Strength."); 

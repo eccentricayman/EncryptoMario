@@ -11,7 +11,7 @@ public class Board {
     
     
     //Constructor
-    public Board(Character one, Character two, Character three, Character four) {
+    public Board(Character one, Character two, Character three, Character four) throws InterruptedException {
         shuffle(1);
         addC(one);
         addC(two);
@@ -27,6 +27,10 @@ public class Board {
     //Methods
     public void addC(Character Boy_X) {
         positions[Boy_X.getX()+5][Boy_X.getY()+5].addCharacter(Boy_X);
+    }
+    public void addCB(int phase, Character Boy_X) throws InterruptedException, Exception {
+        showMap(phase, Boy_X);
+        positions[Boy_X.getX()+5][Boy_X.getY()+5].addCharacterB(Boy_X);
     }
     
     public void rmC(Character Boy_X) {
@@ -75,9 +79,10 @@ public class Board {
     
     public void setEvent(int x, int y) {
         int val = (int)(Math.random() * 100);
-        if (val < 50) positions[x][y] = new BlueSpace();
-        else if (val < 85) positions[x][y] = new RedSpace();
-        else if (val < 90) positions[x][y] = new Bandit();
+        if (val < 35) positions[x][y] = new BlueSpace();
+        else if (val < 50) positions[x][y] = new RedSpace();
+        else if (val < 75) positions[x][y]= new StatChange();
+        else if (val < 80) positions[x][y] = new Bandit();
         else positions[x][y] = new Dimbling();
     }
     
@@ -95,7 +100,6 @@ public class Board {
         while (sorted < 4) {
             max = 0;
             for (int x = 0; x<4; x++) {
-                System.out.println("this is run!");
                 if (sorted == 0) {
                     if(numRank[x] >= max) max = numRank[x];
                 }
@@ -138,6 +142,14 @@ public class Board {
     public Character[][] getRanking() {
         return ranking;
     }
+    
+    public void setTime() {
+        for(int x = 0; x<11; x++) {
+            for(int y = 0; y<11; y++) {
+                if (positions[x][y]!=null) positions[x][y].setTime();
+            }
+        }
+    }
 
     public void showMap(int Phase, Character Boy_X) {
         String temp;
@@ -160,7 +172,7 @@ public class Board {
         System.out.println("        " + positions[2][3].look(Boy_X) + "         " + positions[5][3].look(Boy_X) + "         " + positions[8][3].look(Boy_X) + "\n");
         System.out.println("            " + positions[3][2].look(Boy_X) + "     " + positions[5][2].look(Boy_X) + "     " + positions[7][2].look(Boy_X) + "\n");
         System.out.println("                " + positions[4][1].look(Boy_X) + " " + positions[5][1].look(Boy_X) + " " + positions[6][1].look(Boy_X) + "\n");
-        System.out.println("                    " + positions[5][0].look(Boy_X) + "\n");
+        System.out.println("                    " + positions[5][0].look(Boy_X) + "\n\n");
     }
     
     

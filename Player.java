@@ -7,7 +7,8 @@ public class Player extends Character {
         playa = true;
     }
     
-    public void move(int phase, Board ex) {
+    
+    public void move(int phase, Board ex) throws InterruptedException, Exception{
         Scanner ui = new Scanner(System.in);
         String answer;
         for ( ; roll > 0 ; roll--) {
@@ -30,7 +31,7 @@ public class Player extends Character {
                         ex.rmC(this);
                         if (answer.equals("1")) y++;
                         else {
-                            x--;
+                            x++;
                             y++;
                         }
                     }
@@ -119,7 +120,7 @@ public class Player extends Character {
                     }
                 }
             }
-            ex.addC(this);
+            ex.addCB(phase, this);
         }
     }
         
@@ -131,11 +132,11 @@ public class Player extends Character {
             if ( helm == null )  {
                 System.out.println("Would you like to equip "+eq.getName()+"? \n"+eq+"\nEnter Y or N.");
                 answer = ui.nextLine();
-                while (answer.toLowerCase() == "y" || answer.toLowerCase() == "n") {
+                while (! (answer.toLowerCase().equals("y") || answer.toLowerCase().equals("n"))) {
                     System.out.println("Please input Y or N.");
                     answer = ui.nextLine();
                 }
-                if (answer.toLowerCase() == "y") {
+                if (answer.toLowerCase().equals("y")) {
                     helm = eq;
                     super.addStats(eq);
                     System.out.println(eq.getName() + " has been equipped.");
@@ -151,11 +152,11 @@ public class Player extends Character {
                 System.out.println("New Helm: " + eq);
                 System.out.println("Would you like to swap Helms? Keep in mind the unused Helm will be sold. Enter Y or N.");
                 answer = ui.nextLine();
-                while (answer.toLowerCase() == "y" || answer.toLowerCase() == "n") {
+                while (! (answer.toLowerCase().equals("y") || answer.toLowerCase().equals("n"))) {
                     System.out.println("Please input Y or N.");
                     answer = ui.nextLine();
                 }
-                if (answer.toLowerCase() == "y") {
+                if (answer.toLowerCase().equals("y")) {
                     System.out.println(eq.getName() + " has been equipped and " + helm.getName() + " has been sold for " + helm.getLevel() * 10 + ".");
                     addCoins(helm.getLevel()*10);
                     minusStats(helm);
@@ -174,11 +175,11 @@ public class Player extends Character {
             if ( armor == null )  {
                 System.out.println("Would you like to equip "+eq.getName()+"? \n"+eq+"\nEnter Y or N.");
                 answer = ui.nextLine();
-                while (answer.toLowerCase() == "y" || answer.toLowerCase() == "n") {
+                while (! (answer.toLowerCase().equals("y") || answer.toLowerCase().equals("n"))) {
                     System.out.println("Please input Y or N.");
                     answer = ui.nextLine();
                 }
-                if (answer.toLowerCase() == "y") {
+                if (answer.toLowerCase().equals("y")) {
                     armor = eq;
                     super.addStats(eq);
                     System.out.println(eq.getName() + " has been equipped.");
@@ -194,11 +195,11 @@ public class Player extends Character {
                 System.out.println("New Armor: " + eq);
                 System.out.println("Would you like to swap Armors? Keep in mind the unused Armor will be sold. Enter Y or N.");
                 answer = ui.nextLine();
-                while (answer.toLowerCase() == "y" || answer.toLowerCase() == "n") {
+                while (! (answer.toLowerCase().equals("y") || answer.toLowerCase().equals("n"))) {
                     System.out.println("Please input Y or N.");
                     answer = ui.nextLine();
                 }
-                if (answer.toLowerCase() == "y") {
+                if (answer.toLowerCase().equals("y")) {
                     System.out.println(eq.getName() + " has been equipped and " + armor.getName() + " has been sold for " + armor.getLevel() * 10 + ".");
                     addCoins(armor.getLevel()*10);
                     minusStats(armor);
@@ -217,11 +218,11 @@ public class Player extends Character {
             if ( boots == null )  {
                 System.out.println("Would you like to equip "+eq.getName()+"? \n"+eq+"\nEnter Y or N.");
                 answer = ui.nextLine();
-                while (answer.toLowerCase() == "y" || answer.toLowerCase() == "n") {
+                while (! (answer.toLowerCase().equals("y") || answer.toLowerCase().equals("n"))) {
                     System.out.println("Please input Y or N.");
                     answer = ui.nextLine();
                 }
-                if (answer.toLowerCase() == "y") {
+                if (answer.toLowerCase().equals("y")) {
                     boots = eq;
                     super.addStats(eq);
                     System.out.println(eq.getName() + " has been equipped.");
@@ -237,11 +238,11 @@ public class Player extends Character {
                 System.out.println("New Boots: " + eq);
                 System.out.println("Would you like to swap Boots? Keep in mind the unused Boots will be sold. Enter Y or N.");
                 answer = ui.nextLine();
-                while (answer.toLowerCase() == "y" || answer.toLowerCase() == "n") {
+               while (! (answer.toLowerCase().equals("y") || answer.toLowerCase().equals("n"))) {
                     System.out.println("Please input Y or N.");
                     answer = ui.nextLine();
                 }
-                if (answer.toLowerCase() == "y") {
+                if (answer.toLowerCase().equals("y")) {
                     System.out.println(eq.getName() + " has been equipped and " + boots.getName() + " has been sold for " + boots.getLevel() * 10 + ".");
                     addCoins(boots.getLevel()*10);
                     minusStats(boots);
@@ -260,11 +261,11 @@ public class Player extends Character {
             if ( amulet == null )  {
                 System.out.println("Would you like to equip "+eq.getName()+"? \n"+eq+"\nEnter Y or N.");
                 answer = ui.nextLine();
-                while (answer.toLowerCase() == "y" || answer.toLowerCase() == "n") {
+               while (! (answer.toLowerCase().equals("y") || answer.toLowerCase().equals("n"))) {
                     System.out.println("Please input Y or N.");
                     answer = ui.nextLine();
                 }
-                if (answer.toLowerCase() == "y") {
+                if (answer.toLowerCase().equals("y")) {
                     amulet = eq;
                     super.addStats(eq);
                     System.out.println(eq.getName() + " has been equipped.");
@@ -280,11 +281,11 @@ public class Player extends Character {
                 System.out.println("New Amulet " + eq);
                 System.out.println("Would you like to swap Amulets? Keep in mind the unused Amulet will be sold. Enter Y or N.");
                 answer = ui.nextLine();
-                while (answer.toLowerCase() == "y" || answer.toLowerCase() == "n") {
+                while (! (answer.toLowerCase().equals("y") || answer.toLowerCase().equals("n"))) {
                     System.out.println("Please input Y or N.");
                     answer = ui.nextLine();
                 }
-                if (answer.toLowerCase() == "y") {
+                if (answer.toLowerCase().equals("y")) {
                     System.out.println(eq.getName() + " has been equipped and " + amulet.getName() + " has been sold for " + amulet.getLevel() * 10 + ".");
                     addCoins(amulet.getLevel()*10);
                     minusStats(amulet);
@@ -303,11 +304,11 @@ public class Player extends Character {
             if ( ring == null )  {
                 System.out.println("Would you like to equip "+eq.getName()+"? \n"+eq+"\nEnter Y or N.");
                 answer = ui.nextLine();
-                while (answer.toLowerCase() == "y" || answer.toLowerCase() == "n") {
+                while (! (answer.toLowerCase().equals("y") || answer.toLowerCase().equals("n"))) {
                     System.out.println("Please input Y or N.");
                     answer = ui.nextLine();
                 }
-                if (answer.toLowerCase() == "y") {
+                if (answer.toLowerCase().equals("y")) {
                     ring = eq;
                     super.addStats(eq);
                     System.out.println(eq.getName() + " has been equipped.");
@@ -323,11 +324,11 @@ public class Player extends Character {
                 System.out.println("New Ring: " + eq);
                 System.out.println("Would you like to swap Rings? Keep in mind the unused Ring will be sold. Enter Y or N.");
                 answer = ui.nextLine();
-                while (answer.toLowerCase() == "y" || answer.toLowerCase() == "n") {
+                while (! (answer.toLowerCase().equals("y") || answer.toLowerCase().equals("n"))) {
                     System.out.println("Please input Y or N.");
                     answer = ui.nextLine();
                 }
-                if (answer.toLowerCase() == "y") {
+                if (answer.toLowerCase().equals("y")) {
                     System.out.println(eq.getName() + " has been equipped and " + ring.getName() + " has been sold for " + ring.getLevel() * 10 + ".");
                     addCoins(ring.getLevel()*10);
                     minusStats(ring);

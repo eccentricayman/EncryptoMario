@@ -9,13 +9,9 @@ public class Battle extends Position {
     //defender's stats
     private int dhealth;
     
-    public Battle(Character engager, Character accepter) {
+    public Battle() {
         super("Battle");
-        challenger = engager;
-        defender = accepter;
-        chealth = challenger.getStrength() + challenger.getDefense() + challenger.getDexterity() + challenger.getLuck();
-        dhealth = defender.getStrength() + defender.getDefense() + defender.getDexterity() + defender.getLuck();
-        challenger.addCoins(-1 * challenger.getCoins() / 10); 
+        challeng
     }
 
     private String cdamage() {
@@ -107,6 +103,6 @@ public class Battle extends Position {
     }
 
     public void triggerEvent(Character Boy_X) {
-        //idk
+        if(characters.size() > 1) 
     }
 }

@@ -1,3 +1,5 @@
+An useful tool in making the map.
+
 Phase:  Character:  Roll:   Coins:  Stars:
 
                     [X]                     1st: Player

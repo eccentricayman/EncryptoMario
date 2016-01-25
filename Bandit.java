@@ -24,6 +24,7 @@ public class Bandit extends Position {
                     input = ui.next();
                 }
                 if (input.equals("1")) {
+                    if (Boy_X.getCoins() >= 10) {
                         int val = (int)(Boy_X.getCoins() * .25);
                         System.out.println( Boy_X.getName() + " gave " + val + " coins.");
                         Boy_X.addCoins(-1 * val);
@@ -31,6 +32,8 @@ public class Bandit extends Position {
                         trapper = Boy_X;
                         System.out.println("J: Mucho Grassy Ass.");
                     }
+                    else System.out.println("J: Cmon dude you neet atleast 10 coins.");
+                }
                 else System.out.println("J: All Planned.");
             }
             else {

@@ -14,7 +14,7 @@ public class AI extends Character {
         playa = false;
     }
     
-    public void move(int phase, Board ex) {
+    public void move(int phase, Board ex) throws InterruptedException, Exception{
         for ( ; roll > 0 ; roll--) {
             ex.rmC(this);
             if (Math.abs(x) + Math.abs(y) >= 5) {
@@ -24,17 +24,25 @@ public class AI extends Character {
                         y--;
                     }
                     else {
-                        if((int)(Math.random() * 2) == 0) y++;
+                        if((int)(Math.random() * 2) == 0) {
+                            System.out.println(name + " decided to move up.");
+                            y++;
+                        }
                         else {
-                            x--;
+                            System.out.println(name + " decided to move right.");
+                            x++;
                             y++;
                         }
                     }
                 }
                 else if (y == 0) {
                     if (x > 0) {
-                        if((int)(Math.random() * 2) == 0) x--;
+                        if((int)(Math.random() * 2) == 0) {
+                            System.out.println(name + " decided to move up.");
+                            x--;
+                        }
                         else {
+                            System.out.println(name + " decided to move left.");
                             x--;
                             y++;
                         }
@@ -69,8 +77,14 @@ public class AI extends Character {
                 if (Math.abs(x) + Math.abs(y) <  5) {
                     if (x == 0) {
                         if (y == 0) {
-                            if((int)(Math.random() * 2) == 0)  y++;
-                        else x--;
+                            if((int)(Math.random() * 2) == 0)  {
+                                System.out.println(name + " decided to move up.");
+                                y++;
+                            }
+                            else {
+                                System.out.println(name + " decided to move left.");
+                                x--;
+                            }
                         }
                     else y++;
                     }
@@ -97,7 +111,7 @@ public class AI extends Character {
                     }
                 }
             }
-            ex.addC(this);
+            ex.addCB(phase, this);
         }
     }
     

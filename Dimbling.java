@@ -6,7 +6,8 @@ public class Dimbling extends Position {
         super("Dice Match");
     }
     
-    public void triggerEvent(Character Boy_X) {
+    public void triggerEvent(Character Boy_X) throws Exception {
+        
         System.out.println("AD: Welcome to Ogwarts the premier traveling dimbling host-group. My name is Alvis Dimbledore and I will be your host today.");
         System.out.println("AD: The goal of dimbling is to match as many die as possible out of 6 die.\nAD: Dimbling costs 10 coins and you can view the exact rewards in the tutorial.");
         System.out.println("AD: Would you like to dimble?");
@@ -28,44 +29,45 @@ public class Dimbling extends Position {
                     System.out.println("AD: Let us begin the next great adventure!");
                     
                     System.out.print("System Voice: The first roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     System.out.print("System Voice: The second roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     System.out.print("System Voice: The third roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     System.out.print("System Voice: The fourth roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     System.out.print("System Voice: The fifth roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     System.out.print("System Voice: The sixth roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     val = 0;
                     for (int x : list) {
-                        if (x == 1) val += 1;
+                        if (x==0) val+=0;
+                        else if (x == 1) val += 1;
                         else if (x == 2) val += 5;
                         else if (x == 3) val += 8;
                         else if (x == 4) val += 11;
@@ -91,48 +93,49 @@ public class Dimbling extends Position {
                     System.out.println("AD: Let us begin the next great adventure!");
                     
                     System.out.print("System Voice: The first roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     System.out.print("System Voice: The second roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     System.out.print("System Voice: The third roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     System.out.print("System Voice: The fourth roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     System.out.print("System Voice: The fifth roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     System.out.print("System Voice: The sixth roll is... ");
-                    input = ui.next();
+                    System.in.read();
                     val = ((int)(Math.random() * 6)) + 1;
                     System.out.println(val);
                     list[val-1]++;
                     
                     val = 0;
                     for (int x : list) {
-                        if (x == 1) val += 1;
+                        if (x == 0) val += 0;
+                        else if (x == 1) val += 1;
                         else if (x == 2) val += 5;
-                        else if (x == 3) val += 8;
-                        else if (x == 4) val += 11;
-                        else if (x == 5) val += 17;
+                        else if (x == 3) val += 9;
+                        else if (x == 4) val += 15;
+                        else if (x == 5) val += 19;
                         else val+= 25;
                     }
                     
@@ -145,4 +148,6 @@ public class Dimbling extends Position {
             else System.out.println("AD: Come anytime for the next great adventure!");
         }
     }
+    
+    
 }

@@ -157,7 +157,7 @@ public class Tutorial {
         }       
     } 
 
-    public static void starttutorial() {
+    public static void starttutorial() throws Exception{
         String answer = "";
         Scanner ui = new Scanner(System.in);        
         while (!(answer.equals("N"))) {
@@ -166,16 +166,16 @@ public class Tutorial {
             if (answer.equals("1")) {
                 System.out.println(basics);
                 System.out.println("Continue...");
-                ui.next();
+                System.in.read();
                 System.out.println(coins);
                 System.out.println("Continue...");
-                ui.next();
+                System.in.read();
                 System.out.println(stats);
                 System.out.println("Continue...");
-                ui.next();
+                System.in.read();
                 viewevents();
                 System.out.println("Continue...");
-                ui.next();
+                System.in.read();
             }
             else if (answer.equals("2")) {
                 System.out.println(toc);

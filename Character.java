@@ -142,7 +142,7 @@ public abstract class Character {
         }
     }
     
-    public int roll() {
+    public int roll() throws InterruptedException{
     	roll = ((int)(Math.random()*6)) + 1;
     	return roll;
     }
@@ -180,7 +180,7 @@ public abstract class Character {
         luck -= effects[3];
     }
     
-    public abstract void move(int phase, Board ex);
+    public abstract void move(int phase, Board ex) throws InterruptedException, Exception;
     
     public abstract void equip(Equips eq);
     
