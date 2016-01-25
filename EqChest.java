@@ -1,18 +1,18 @@
-public class StarChest extends Chest{
+public class EqChest extends Chest {
     
-    public static final String[] types = {"Strength", "Defense","Dexterity"};
+    public static final String[] types = {"Strength", "Intelligence","Dexterity"};
     private String type;
     private int req;
     private Equips treasure;
     
-    public StarChest(int Phase) {
+    public EqChest(int Phase) {
         super("Chest");
         type = types[(int)(Math.random() * 3)];
         req = (int)(Phase*5 + Math.random()*Phase*2);
         treasure = new Equips(Phase);
-        full = true;
     }
     
+
     
     public void triggerEvent(Character Boy_X) {
         if (full) {
@@ -26,9 +26,8 @@ public class StarChest extends Chest{
             
             if (pass) {
                 if (Boy_X.getCoins() >= 20) {
-                    System.out.println(Boy_X.getName() + " obtained an equip AND a star in exchange for 20 coins.");
+                    System.out.println(Boy_X.getName() + " obtained an equip in exchange for 20 coins.");
                     Boy_X.addCoins(-20);
-                    Boy_X.addStars(1);
                     Boy_X.equip(treasure);
                     full = false;
                 }

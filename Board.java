@@ -32,27 +32,27 @@ public class Board {
         int val = (int)(Math.random()* 4);
         if (val == 0) {
             positions[5][10] = new StarChest(phase);
-            positions[0][5] = new Chest(phase);
-            positions[10][5] = new Chest(phase);
-            positions[5][0] = new Chest(phase);
+            positions[0][5] = new EqChest(phase);
+            positions[10][5] = new EqChest(phase);
+            positions[5][0] = new EqChest(phase);
         }
         else if (val == 1) {
             positions[0][5] = new StarChest(phase);
-            positions[5][10] = new Chest(phase);
-            positions[10][5] = new Chest(phase);
-            positions[5][0] = new Chest(phase);
+            positions[5][10] = new EqChest(phase);
+            positions[10][5] = new EqChest(phase);
+            positions[5][0] = new EqChest(phase);
         }
         else if (val == 2) {
             positions[10][5] = new StarChest(phase);
-            positions[5][10] = new Chest(phase);
-            positions[0][5] = new Chest(phase);
-            positions[5][0] = new Chest(phase);
+            positions[5][10] = new EqChest(phase);
+            positions[0][5] = new EqChest(phase);
+            positions[5][0] = new EqChest(phase);
         }
         else {
             positions[5][0] = new StarChest(phase);
-            positions[5][10] = new Chest(phase);
-            positions[0][5] = new Chest(phase);
-            positions[10][5] = new Chest(phase);
+            positions[5][10] = new EqChest(phase);
+            positions[0][5] = new EqChest(phase);
+            positions[10][5] = new EqChest(phase);
         }
         
         for (int x = 0, y = 5; x<11; x++) {
