@@ -92,7 +92,8 @@ public class Player extends Character {
                     }
                 }
             }
-            
+            ex.rmC(this);
+            ex.addC(this);
         }
     }
         
