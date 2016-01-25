@@ -102,7 +102,8 @@ public class Tutorial {
         "Blue positions are spaces that give the player 4 coins.";
 
     private static String dimbling =
-        "<INSERT DIMBLING INFORMATION HERE>";
+        "A gambling game that lets you roll 6 die. If they match the numbers\n"
+        + "given, you'll get a certain amount of coins.";
 
     private static String redpos =
         "Red positions are spaces that take 4 coins away from the player.";
@@ -115,36 +116,36 @@ public class Tutorial {
 
     private static String conclusion =
         "Thanks for reading! Would you like to:\n"
-        + "Y) Read the tutorial again"
-        + "OR"
+        + "Y) Read the tutorial again\n"
+        + "OR\n"
         + "N) Play the game";
         
     public static void viewevents() {
         String answer = "";
-        Scanner user = new Scanner(System.in);
-        while (answer != "N") {
+        Scanner ui = new Scanner(System.in);
+        while (!(answer.equals("N"))) {
             System.out.println(events);
-            answer = user.readLine();
-            if (answer == "1") {
+            answer = ui.next();
+            if (answer.equals("1")) {
                 System.out.println(bandits);
                 System.out.println(battles);
                 System.out.println(bluepos);
                 System.out.println(dimbling);
                 System.out.println(redpos);
             }
-            else if (answer == "2") {
+            else if (answer.equals("2")) {
                 System.out.println(bandits);
             }
-            else if (answer == "3") {
+            else if (answer.equals("3")) {
                 System.out.println(battles);
             }
-            else if (answer == "4") {
+            else if (answer.equals("4")) {
                 System.out.println(bluepos);
             }
-            else if (answer == "5") {
+            else if (answer.equals("5")) {
                 System.out.println(dimbling);
             }
-            else if (answer == "6") {
+            else if (answer.equals("6")) {
                 System.out.println(redpos);
             }
             else {
@@ -152,51 +153,59 @@ public class Tutorial {
             }
             System.out.println("Would you like to view another section?");
             System.out.println("Please type Y or N.");
-            answer = user.readLine();
+            answer = ui.next();
         }       
     } 
 
     public static void starttutorial() {
         String answer = "";
-        Scanner user = new Scanner(System.in);        
-        while (answer != "N") {
+        Scanner ui = new Scanner(System.in);        
+        while (!(answer.equals("N"))) {
             System.out.println(intro);
-            answer = user.readLine();
-            if (answer == "1") {
+            answer = ui.next();
+            if (answer.equals("1")) {
                 System.out.println(basics);
+                System.out.println("Continue...");
+                ui.next();
                 System.out.println(coins);
+                System.out.println("Continue...");
+                ui.next();
                 System.out.println(stats);
+                System.out.println("Continue...");
+                ui.next();
                 viewevents();
-                System.out.println(conclusion);
+                System.out.println("Continue...");
+                ui.next();
             }
-            else if (answer == "2") {
+            else if (answer.equals("2")) {
                 System.out.println(toc);
-                answer = user.readLine();
-                if (answer == "1") {
+                answer = ui.next();
+                if (answer.equals("1")) {
                     System.out.println(basics);
                 }
-                else if (answer == "2") {
+                else if (answer.equals("2")) {
                     System.out.println(coins);
                 }
-                else if (answer == "3") {
+                else if (answer.equals("3")) {
                     System.out.println(stats);
                 }
-                else if (answer == "4") {
+                else if (answer.equals("4")) {
                     viewevents();
                 }
-                else if (answer == "5") {
+                else if (answer.equals("5")) {
                     System.out.println(winning);
                 }
                 else {
                     System.out.println("Please enter a number from 1-5.");
                 }
                 System.out.println(conclusion);
+                answer = ui.next();
             }
         }
     }
 
     public static void main(String[] args) {
-        System.out.println("hi");
+        starttutorial();
     }
 }
 

@@ -10,7 +10,7 @@ public class Battle extends Position {
     private int dhealth;
     
     public Battle(Character engager, Character accepter) {
-        eventName = "Battle";
+        super("Battle");
         challenger = engager;
         defender = accepter;
         chealth = challenger.getStrength() + challenger.getDefense() + challenger.getDexterity() + challenger.getLuck();
@@ -105,5 +105,8 @@ public class Battle extends Position {
             defender.addLuck(challenger.getLuck() / 4);
         }
     }
-    
+
+    public void triggerEvent(Character Boy_X) {
+        //idk
+    }
 }
