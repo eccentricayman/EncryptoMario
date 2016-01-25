@@ -19,11 +19,11 @@ public class Bandit extends Position {
                 Scanner ui = new Scanner(System.in);
                 System.out.println("Enter 1 (yes) or 2 (no).");
                 String input = ui.next();
-                while (input != "1" && input != "2") {
+                while (! (input.equals("1") || input.equals("2"))) {
                     System.out.println("Enter 1 (yes) or 2 (no).");
                     input = ui.next();
                 }
-                if (input == "1") {
+                if (input.equals("1")) {
                         int val = (int)(Boy_X.getCoins() * .25);
                         System.out.println( Boy_X.getName() + " gave " + val + " coins.");
                         Boy_X.addCoins(-1 * val);

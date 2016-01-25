@@ -1,10 +1,28 @@
 import java.util.Scanner;
 
 public class Game {
+    
+    public static void playTurn(Character Boy_X, int phase, Board bored) {
+        bored.showMap(phase, Boy_X);
+        int roll = Boy_X.roll();
+        System.out.println(Boy_X.getName() + " rolled a " + roll);
+        Boy_X.move(phase, bored);
+        bored.showMap(phase, Boy_X);
+        bored.getPos(Boy_X.getX() + 5,Boy_X.getY() + 5).triggerEvent(Boy_X);
+    }
+    
+    public static int getOpened(Board bored) {
+        int opened = 0;
+        if(! ((Chest) bored.getPos(5,10)).isFull()) opened++;
+        if(! ((Chest) bored.getPos(10,5)).isFull()) opened++;
+        if(! ((Chest) bored.getPos(0,5)).isFull()) opened++;
+        if(! ((Chest) bored.getPos(5,0)).isFull()) opened++;
+        return opened;
+    }
+    
     public static void main(String[] args) {
         Scanner ui = new Scanner(System.in);
         String input;
-        int roll;
         int EndPhase = 0;
         boolean done = false;
         
@@ -14,7 +32,7 @@ public class Game {
         
         System.out.println("System Voice: What difficulty would you like to play on?\nSystem Voice: Please choose from Easy(1), Normal(2), Intermediate(3), and Advanced(4).\nPlease input 1, 2, 3, or 4.");
         input = ui.next();
-        while (input != "1" && input != "2" && input != "3" && input != "4") {
+        while (input == "1" || input == "2" || input == "3" || input == "4") {
             System.out.println("Please input 1, 2, 3, or 4.");
             input = ui.next();
         }
@@ -51,30 +69,15 @@ public class Game {
             while (opened < 3) {
                 opened = 0;
                 
-                game.showMap(phase, one);
-                roll = one.roll();
-                one.move(phase, game);
-                game.getPos(one.getX() + 5,one.getY() + 5).triggerEvent(one);
-            
-                game.showMap(phase, two);
-                roll = two.roll();
-                two.move(phase, game);
-                game.getPos(two.getX() + 5,two.getY() + 5).triggerEvent(two);
-            
-                game.showMap(phase, three);
-                roll = three.roll();
-                three.move(phase, game);
-                game.getPos(three.getX() + 5,three.getY() + 5).triggerEvent(three);
-            
-                game.showMap(phase, four);
-                roll = four.roll();
-                four.move(phase, game);
-                game.getPos(four.getX() + 5,four.getY() + 5).triggerEvent(four);
+                playTurn(one, phase, game);
                 
-                if(! ((Chest) game.getPos(5,10)).isFull()) opened++;
-                if(! ((Chest) game.getPos(10,5)).isFull()) opened++;
-                if(! ((Chest) game.getPos(0,5)).isFull()) opened++;
-                if(! ((Chest) game.getPos(5,0)).isFull()) opened++;
+                playTurn(two, phase, game);
+                
+                playTurn(three, phase, game);
+                
+                playTurn(four, phase, game);
+                
+                opened = getOpened(game);
             }
         }
         

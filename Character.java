@@ -40,6 +40,7 @@ public abstract class Character {
         defense = def;
         dexterity = dex;
         luck = luk;
+        coins = 5;
     }
     
     public String getName() {

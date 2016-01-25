@@ -16,7 +16,8 @@ public class AI extends Character {
     
     public void move(int phase, Board ex) {
         for ( ; roll > 0 ; roll--) {
-            if (Math.abs(x) + Math.abs(y) > 5) {
+            ex.rmC(this);
+            if (Math.abs(x) + Math.abs(y) >= 5) {
                 if (x == 0) {
                     if (y > 0) {
                         x--;
@@ -26,13 +27,13 @@ public class AI extends Character {
                         if((int)(Math.random() * 2) == 0) y++;
                         else {
                             x--;
-                            y--;
+                            y++;
                         }
                     }
                 }
                 else if (y == 0) {
                     if (x > 0) {
-                        if((int)(Math.random() * 2) == 0) y++;
+                        if((int)(Math.random() * 2) == 0) x--;
                         else {
                             x--;
                             y++;
@@ -43,15 +44,32 @@ public class AI extends Character {
                         y--;
                     } 
                 }
+                else if (x<0) {
+                    if (y>0) {
+                        x--;
+                        y--;
+                    }
+                    else {
+                        x++;
+                        y--;
+                    }
+                }
+                else {
+                    if(y>0) {
+                        x--;
+                        y++;
+                    }
+                    else {
+                        x++;
+                        y++;
+                    }
+                }
             }
             else {
                 if (Math.abs(x) + Math.abs(y) <  5) {
                     if (x == 0) {
                         if (y == 0) {
-                            if((int)(Math.random() * 2) == 0) {
-                            x--;
-                            y++;
-                        }
+                            if((int)(Math.random() * 2) == 0)  y++;
                         else x--;
                         }
                     else y++;
@@ -79,7 +97,6 @@ public class AI extends Character {
                     }
                 }
             }
-            ex.rmC(this);
             ex.addC(this);
         }
     }

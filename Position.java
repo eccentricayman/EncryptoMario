@@ -17,8 +17,8 @@ public abstract class Position {
         characters.add(toadd);
     }
 
-    public void clearCharacter() {
-        characters = new ArrayList<Character>();
+    public void clearCharacter(Character Boy_X) {
+        characters.remove(characters.indexOf(Boy_X));
     }
     
     public String getEName() {

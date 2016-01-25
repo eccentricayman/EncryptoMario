@@ -13,11 +13,13 @@ public class Dimbling extends Position {
         Scanner ui = new Scanner(System.in);
         String input = "";
         if (Boy_X.getPlaya()) {
-            while (input != "1" && input != "2") {
+            System.out.println("Enter 1 (yes) or 2 (no).");
+            input = ui.next();
+            while (! (input.equals("1") || input.equals("2"))) {
                 System.out.println("Enter 1 (yes) or 2 (no).");
                 input = ui.next();
             }
-            if (input == "1") {
+            if (input.equals("1")) {
                 if (Boy_X.getCoins() >= 10) {
                     System.out.println("System Voice: " + Boy_X.getName() + " gave 10 coins.");
                     Boy_X.addCoins(-10);

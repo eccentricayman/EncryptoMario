@@ -13,19 +13,24 @@ public class Board {
     //Constructor
     public Board(Character one, Character two, Character three, Character four) {
         shuffle(1);
+        addC(one);
+        addC(two);
+        addC(three);
+        addC(four);
+        
         ranking[0] = new Character[] {one, two, three, four};
         ranking[1] = new Character[] {null,null,null};
         ranking[2] = new Character[] {null,null};
-        ranking[3] = new Character[] {null,null};
+        ranking[3] = new Character[] {null};
     }
     
     //Methods
     public void addC(Character Boy_X) {
-        positions[Boy_X.getX()][Boy_X.getY()].addCharacter(Boy_X);
+        positions[Boy_X.getX()+5][Boy_X.getY()+5].addCharacter(Boy_X);
     }
     
     public void rmC(Character Boy_X) {
-        positions[Boy_X.getX()][Boy_X.getY()].clearCharacter();
+        positions[Boy_X.getX()+5][Boy_X.getY()+5].clearCharacter(Boy_X);
     }
     
     public void shuffle(int phase) {
@@ -55,7 +60,7 @@ public class Board {
             positions[10][5] = new EqChest(phase);
         }
         
-        for (int x = 0, y = 5; x<11; x++) {
+        for (int x = 1, y = 5; x<10; x++) {
             setEvent(x,y);
             setEvent(y,x);
         }
@@ -133,16 +138,16 @@ public class Board {
         String temp;
         System.out.println("Phase: " + Phase + "  Character: " + Boy_X.getName() + "  Roll: " + Boy_X.getRoll() + "  Coins: " + Boy_X.getCoins() + "  Stars: " + Boy_X.getStars() + "\n");
         temp = "";
-        for (int x = 0; ranking[1][x] == null; x++) temp+= ranking[1][x].getName() + " ";
+        for (int x = 0; x<4 && ranking[0][x] != null; x++) temp+= ranking[0][x].getName() + " ";
         System.out.println("                    " + positions[5][10].look(Boy_X) + "                     1st: " + temp + "\n");
         temp = "";
-        for (int x = 0; ranking[1][x] == null; x++) temp+= ranking[1][x].getName() + " ";
+        for (int x = 0; x<3 && ranking[1][x] != null; x++) temp+= ranking[1][x].getName() + " ";
         System.out.println("                " + positions[4][9].look(Boy_X) + " " + positions[5][9].look(Boy_X) + " " + positions[6][9].look(Boy_X) + "                 2nd: " + temp + "\n");
         temp = "";
-        for (int x = 0; ranking[1][x] == null; x++) temp+= ranking[1][x].getName() + " ";
+        for (int x = 0; x<2 && ranking[2][x] != null; x++) temp+= ranking[2][x].getName() + " ";
         System.out.println("            " + positions[3][8].look(Boy_X) + "     " + positions[5][8].look(Boy_X) + "     " + positions[7][8].look(Boy_X) + "             3rd: " + temp + "\n");
         temp = "";
-        for (int x = 0; ranking[1][x] == null; x++) temp+= ranking[1][x].getName() + " ";
+        for (int x = 0; x<1 && ranking[3][x] != null; x++) temp+= ranking[3][x].getName() + " ";
         System.out.println("        " + positions[2][7].look(Boy_X) + "         " + positions[5][7].look(Boy_X) + "         " + positions[8][7].look(Boy_X) + "         4th: " + temp + "\n");
         System.out.println("    " + positions[1][6].look(Boy_X) + "             " + positions[5][6].look(Boy_X) + "             " + positions[9][6].look(Boy_X) + "\n");
         System.out.println(positions[0][5].look(Boy_X) + " " + positions[1][5].look(Boy_X) + " " + positions[2][5].look(Boy_X) + " " + positions[3][5].look(Boy_X) + " " + positions[4][5].look(Boy_X) + " " + positions[5][5].look(Boy_X) + " " + positions[6][5].look(Boy_X) + " " + positions[7][5].look(Boy_X) + " " + positions[8][5].look(Boy_X) + " " + positions[9][5].look(Boy_X) + " " + positions[10][5].look(Boy_X) + "\n");
