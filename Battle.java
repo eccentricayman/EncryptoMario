@@ -30,7 +30,7 @@ public class Battle extends Position {
         else {
             int damage = challenger.getStrength();
             dhealth -= damage;
-            retstr += Challenger.getName() + " dealt " + damage "."; 
+            retstr += Challenger.getName() + " dealt " + damage + "."; 
         }
         return retstr;
     }
