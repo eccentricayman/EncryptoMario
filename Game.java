@@ -69,6 +69,8 @@ public class Game {
             while (opened < 3) {
                 opened = 0;
                 
+                one.addCoins(1);
+                
                 game.setRanking(one,two,three,four);
                 playTurn(one, phase, game);
                 
@@ -87,6 +89,9 @@ public class Game {
         
         System.out.println("System Voice: The game has come to an end in " + EndPhase + " phases.");
         System.out.println("System Voice: Here is the end ranking.");
+        
+        if (game.getRanking()[0][0] == null) System.out.println("null");
+        else System.out.println("not null");
         
         for(int rank = 1; rank < 5; rank++) {
             for(int x = 0; game.getRanking()[rank-1][x] == null; x++) {

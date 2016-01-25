@@ -95,16 +95,19 @@ public class Board {
         while (sorted < 4) {
             max = 0;
             for (int x = 0; x<4; x++) {
-                if (sorted == 0) if(numRank[x] >= max) max = numRank[x]; 
-                else if (numRank[x] < threshold) if(numRank[x] > max) max = numRank[x];
+                System.out.println("this is run!");
+                if (sorted == 0) {
+                    if(numRank[x] >= max) max = numRank[x];
+                }
+                else if (numRank[x] < threshold && numRank[x] > max) max = numRank[x];
             }
+            threshold = max;
             for (int x = 0; x<4; x++) {
                 if (numRank[x] == max) {
                     setRank(rank - 1, x, one, two, three, four);
                     sorted++;
                 }
             }
-            threshold = max;
             rank++;
         }
     }
@@ -119,7 +122,9 @@ public class Board {
     
     public void setRank(int rank, int indicator, Character one, Character two, Character three, Character four) {
         int x = 0;
-        for( ; ranking[rank][x] == null; x++)
+        while (ranking[rank][x] != null) {
+            x++;
+        }
         if (indicator == 0) ranking[rank][x] = one;
         else if (indicator == 1) ranking[rank][x] = two;
         else if (indicator == 2) ranking[rank][x] = three;

@@ -124,7 +124,7 @@ public class Tutorial {
         Scanner user = new Scanner(System.in);
         while (answer != "N") {
             System.out.println(events);
-            answer = user.readLine();
+            answer = user.next();
             if (answer == "1") {
                 System.out.println(bandits);
                 System.out.println(battles);
@@ -152,7 +152,7 @@ public class Tutorial {
             }
             System.out.println("Would you like to view another section?");
             System.out.println("Please type Y or N.");
-            answer = user.readLine();
+            answer = user.next();
         }       
     } 
 
@@ -161,7 +161,7 @@ public class Tutorial {
         Scanner user = new Scanner(System.in);        
         while (answer != "N") {
             System.out.println(intro);
-            answer = user.readLine();
+            answer = user.next();
             if (answer == "1") {
                 System.out.println(basics);
                 System.out.println(coins);
@@ -171,7 +171,7 @@ public class Tutorial {
             }
             else if (answer == "2") {
                 System.out.println(toc);
-                answer = user.readLine();
+                answer = user.next();
                 if (answer == "1") {
                     System.out.println(basics);
                 }
