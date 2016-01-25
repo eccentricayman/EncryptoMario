@@ -25,7 +25,11 @@ public class Game {
         String input;
         int EndPhase = 0;
         boolean done = false;
-        
+        System.out.println("1) Tutorial\n2) Game");
+        input = ui.next();
+        if (input.equals("1")) {
+            Tutorial.starttutorial();
+        }
         System.out.println("System Voice: Welcome to __. What is your name?");
         input = ui.next();
         Character one = new Player(input);
